@@ -1,0 +1,437 @@
+20/08 00:25:03 [org.ubs.dis.framework.read.ReadProperty.profile:33] - Project variable read successfully.
+20/08 00:25:03 [org.ubs.dis.framework.read.ReadProperty.profile:33] - Project variable read successfully.
+20/08 00:25:03 [org.ubs.dis.framework.selenium.TestBase.initializeSuiteLevel:48] - Project Property Value is: {FileDownloadPath=Data/DownloadedData/, reportName=Automation Regression Report, SeleniumVariant=webdriver, Driver=src/main/resources/driverexe/, reportColumn=strStepDesc,strExpResult,strActualResult,strStatus, FileTypeToBeDownload=application/pdf, deviceLog=src/test/reports/DeviceLog/, adblocation=/Users/administrator/android-sdks/platform-tools/adb, testdata=src/test/resources/Data/TestData/, MainReport=reports/Report/Main, objectrepository=OR/, loggerproperties=src/main/resources/config/ , logs=src/test/reports/Debuglog/, reportCss=Reports/Report/report.css, implicitWait=30, tempreportdir=test-output/html/, pageLoadWait=120, testsuite=TestSuite/Suites/, templatedir=Config/template/, explicitWait=30, ReportPath=src/test/reports/Report/, TestNG=src/main/resources/TestNGSuit/, Screenshot=src/test/reports/Report/Screenshot/, reportfailedXMl=Reports/Report/TestNGfailedxml/, RetryFailedXML=test-output/html/TestNGfailedxml/, config=config/, SystemTempFolder=C:/Users/acer/AppData/Local/Temp}
+20/08 00:25:04 [org.ubs.dis.framework.utilities.FileUtil.InitializeProject:441] - Error while creating Report Folder
+20/08 00:25:04 [org.ubs.dis.framework.utilities.FileUtil.InitializeProject:442] - Cannot invoke "java.util.HashMap.get(Object)" because "this.dicConfig" is null
+20/08 00:25:04 [org.ubs.dis.framework.selenium.WebDriverFactory.getChromeDriver:174] - Chrome Driver is initialized for WINDOWS 10 O.S
+20/08 00:26:13 [org.ubs.dis.framework.selenium.TestBase.getBrowserObject:149] - Driver with detail launched successfully:  ChromeDriver: chrome on WINDOWS (5cfa1467e84df7d53b3a74fac6072805)
+20/08 00:26:13 [org.ubs.dis.framework.selenium.TestBase.setupBrowser:177] - Initialize Driver 291651850
+20/08 00:26:13 [org.ubs.dis.framework.selenium.WaitHelper.setImplicitWait:25] - Implicit wait is set with Timeout 30 SECONDS
+20/08 00:26:13 [org.ubs.dis.framework.selenium.WaitHelper.pageLoadTime:95] - Waiting for page to be loaded max time 120 seconds
+20/08 00:26:13 [org.ubs.dis.framework.selenium.WaitHelper.pageLoadTime:97] - Page is Loaded within specified time 120 seconds
+20/08 00:26:14 [org.ubs.dis.framework.selenium.TestBase.InitializeTestLevel:59] - BrowserType: chrome launched successfully
+20/08 00:26:26 [org.ubs.dis.framework.selenium.TestBase.launchApplication:207] - Application URL: http://automationpractice.com/index.php launched successfully
+20/08 00:26:26 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:185] - Take Screenshot on navigation ...
+20/08 00:26:26 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:122] - File Name:is blank
+20/08 00:26:29 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:128] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot10713238378164159224.png 
+20/08 00:26:29 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:132] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot10713238378164159224.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_26_2021_12_26_26.png
+20/08 00:26:29 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:134] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot10713238378164159224.png  copied to result file
+20/08 00:26:29 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:187] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_26_2021_12_26_26.png
+20/08 00:26:29 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:190] - Screenshot taken successfully
+20/08 00:26:30 [PageObjects.LoginPage.<init>:75] - LoginPage initiated with all its elements
+20/08 00:26:33 [PageObjects.LoginPage.clicOnSignIn:84] - Clicked on Sigin link ... and Authentication text is available
+20/08 00:26:33 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:185] - Take Screenshot on navigation ...
+20/08 00:26:33 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:122] - File Name:is blank
+20/08 00:26:34 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:128] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot13334406324908210668.png 
+20/08 00:26:34 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:132] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot13334406324908210668.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_26_2021_12_26_33.png
+20/08 00:26:34 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:134] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot13334406324908210668.png  copied to result file
+20/08 00:26:34 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:187] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_26_2021_12_26_33.png
+20/08 00:26:34 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:190] - Screenshot taken successfully
+20/08 00:26:39 [PageObjects.LoginPage.SignInWithValidCred:102] - SignIn with user id gireshsingh@gmail.com is successful
+20/08 00:26:39 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:185] - Take Screenshot on navigation ...
+20/08 00:26:39 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:122] - File Name:is blank
+20/08 00:26:39 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:128] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot1599099245796287917.png 
+20/08 00:26:39 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:132] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot1599099245796287917.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_26_2021_12_26_39.png
+20/08 00:26:39 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:134] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot1599099245796287917.png  copied to result file
+20/08 00:26:39 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:187] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_26_2021_12_26_39.png
+20/08 00:26:39 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:190] - Screenshot taken successfully
+20/08 00:26:42 [PageObjects.LoginPage.logOutApp:117] - Logout is successful.....
+20/08 00:26:42 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:185] - Take Screenshot on navigation ...
+20/08 00:26:42 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:122] - File Name:is blank
+20/08 00:26:43 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:128] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot4070467480856637155.png 
+20/08 00:26:43 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:132] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot4070467480856637155.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_26_2021_12_26_42.png
+20/08 00:26:43 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:134] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot4070467480856637155.png  copied to result file
+20/08 00:26:43 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:187] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_26_2021_12_26_42.png
+20/08 00:26:43 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:190] - Screenshot taken successfully
+20/08 00:26:43 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:94] - Screenshot with name logInValid is attached in extent report
+20/08 00:26:44 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:101] - Report is ready now
+20/08 00:26:46 [org.ubs.dis.framework.selenium.TestBase.launchApplication:207] - Application URL: http://automationpractice.com/index.php launched successfully
+20/08 00:26:46 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:185] - Take Screenshot on navigation ...
+20/08 00:26:46 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:122] - File Name:is blank
+20/08 00:26:47 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:128] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot7157550058060523441.png 
+20/08 00:26:47 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:132] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot7157550058060523441.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_26_2021_12_26_46.png
+20/08 00:26:47 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:134] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot7157550058060523441.png  copied to result file
+20/08 00:26:47 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:187] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_26_2021_12_26_46.png
+20/08 00:26:47 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:190] - Screenshot taken successfully
+20/08 00:26:47 [PageObjects.LoginPage.<init>:75] - LoginPage initiated with all its elements
+20/08 00:26:51 [PageObjects.LoginPage.clicOnSignIn:84] - Clicked on Sigin link ... and Authentication text is available
+20/08 00:26:51 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:185] - Take Screenshot on navigation ...
+20/08 00:26:51 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:122] - File Name:is blank
+20/08 00:26:52 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:128] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot14858152887305982380.png 
+20/08 00:26:52 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:132] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot14858152887305982380.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_26_2021_12_26_51.png
+20/08 00:26:52 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:134] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot14858152887305982380.png  copied to result file
+20/08 00:26:52 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:187] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_26_2021_12_26_51.png
+20/08 00:26:52 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:190] - Screenshot taken successfully
+20/08 00:26:57 [PageObjects.LoginPage.SignInWithValidCred:102] - SignIn with user id gireshsingh@gmail.com is successful
+20/08 00:26:57 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:185] - Take Screenshot on navigation ...
+20/08 00:26:57 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:122] - File Name:is blank
+20/08 00:26:57 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:128] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot9082555939645095724.png 
+20/08 00:26:57 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:132] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot9082555939645095724.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_26_2021_12_26_57.png
+20/08 00:26:57 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:134] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot9082555939645095724.png  copied to result file
+20/08 00:26:57 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:187] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_26_2021_12_26_57.png
+20/08 00:26:57 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:190] - Screenshot taken successfully
+20/08 00:27:01 [PageObjects.LoginPage.logOutApp:117] - Logout is successful.....
+20/08 00:27:01 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:185] - Take Screenshot on navigation ...
+20/08 00:27:01 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:122] - File Name:is blank
+20/08 00:27:01 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:128] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot221284181442652918.png 
+20/08 00:27:01 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:132] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot221284181442652918.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_27_2021_12_27_01.png
+20/08 00:27:01 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:134] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot221284181442652918.png  copied to result file
+20/08 00:27:01 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:187] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_27_2021_12_27_01.png
+20/08 00:27:01 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:190] - Screenshot taken successfully
+20/08 00:27:01 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:94] - Screenshot with name logInWithInValid is attached in extent report
+20/08 00:27:01 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:101] - Report is ready now
+20/08 00:27:03 [org.ubs.dis.framework.selenium.TestBase.TearDown:111] - End of test driver closed
+20/08 00:36:48 [org.ubs.dis.framework.read.ReadProperty.profile:33] - Project variable read successfully.
+20/08 00:36:48 [org.ubs.dis.framework.read.ReadProperty.profile:33] - Project variable read successfully.
+20/08 00:36:48 [org.ubs.dis.framework.selenium.TestBase.initializeSuiteLevel:48] - Project Property Value is: {FileDownloadPath=Data/DownloadedData/, reportName=Automation Regression Report, SeleniumVariant=webdriver, Driver=src/main/resources/driverexe/, reportColumn=strStepDesc,strExpResult,strActualResult,strStatus, FileTypeToBeDownload=application/pdf, deviceLog=src/test/reports/DeviceLog/, adblocation=/Users/administrator/android-sdks/platform-tools/adb, testdata=src/test/resources/Data/TestData/, MainReport=reports/Report/Main, objectrepository=OR/, loggerproperties=src/main/resources/config/ , logs=src/test/reports/Debuglog/, reportCss=Reports/Report/report.css, implicitWait=30, tempreportdir=test-output/html/, pageLoadWait=120, testsuite=TestSuite/Suites/, templatedir=Config/template/, explicitWait=30, ReportPath=src/test/reports/Report/, TestNG=src/main/resources/TestNGSuit/, Screenshot=src/test/reports/Report/Screenshot/, reportfailedXMl=Reports/Report/TestNGfailedxml/, RetryFailedXML=test-output/html/TestNGfailedxml/, config=config/, SystemTempFolder=C:/Users/acer/AppData/Local/Temp}
+20/08 00:36:48 [org.ubs.dis.framework.utilities.FileUtil.InitializeProject:441] - Error while creating Report Folder
+20/08 00:36:48 [org.ubs.dis.framework.utilities.FileUtil.InitializeProject:442] - Cannot invoke "java.util.HashMap.get(Object)" because "this.dicConfig" is null
+20/08 00:36:48 [org.ubs.dis.framework.utilities.ExtentListener.onStart:56] - onStart - LogInTest OnStart
+20/08 00:36:48 [org.ubs.dis.framework.selenium.WebDriverFactory.getChromeDriver:174] - Chrome Driver is initialized for WINDOWS 10 O.S
+20/08 00:37:03 [org.ubs.dis.framework.selenium.TestBase.getBrowserObject:150] - Driver with detail launched successfully:  ChromeDriver: chrome on WINDOWS (6a7c805747bcc4ee9b8edb1ee79d9341)
+20/08 00:37:03 [org.ubs.dis.framework.selenium.TestBase.setupBrowser:178] - Initialize Driver 211649273
+20/08 00:37:03 [org.ubs.dis.framework.selenium.WaitHelper.setImplicitWait:25] - Implicit wait is set with Timeout 30 SECONDS
+20/08 00:37:03 [org.ubs.dis.framework.selenium.WaitHelper.pageLoadTime:95] - Waiting for page to be loaded max time 120 seconds
+20/08 00:37:03 [org.ubs.dis.framework.selenium.WaitHelper.pageLoadTime:97] - Page is Loaded within specified time 120 seconds
+20/08 00:37:03 [org.ubs.dis.framework.selenium.TestBase.InitializeTestLevel:59] - BrowserType: chrome launched successfully
+20/08 00:37:04 [org.ubs.dis.framework.utilities.ExtentListener.onTestStart:20] - OnStart - logInValid Started
+20/08 00:37:12 [org.ubs.dis.framework.selenium.TestBase.launchApplication:208] - Application URL: http://automationpractice.com/index.php launched successfully
+20/08 00:37:12 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 00:37:12 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 00:37:13 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot8916653478591776775.png 
+20/08 00:37:13 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot8916653478591776775.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_37_2021_12_37_12.png
+20/08 00:37:13 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot8916653478591776775.png  copied to result file
+20/08 00:37:13 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_37_2021_12_37_12.png
+20/08 00:37:13 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 00:37:14 [PageObjects.LoginPage.<init>:75] - LoginPage initiated with all its elements
+20/08 00:37:16 [PageObjects.LoginPage.clicOnSignIn:84] - Clicked on Sigin link ... and Authentication text is available
+20/08 00:37:16 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 00:37:16 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 00:37:17 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot11470712745839142802.png 
+20/08 00:37:17 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot11470712745839142802.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_37_2021_12_37_16.png
+20/08 00:37:17 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot11470712745839142802.png  copied to result file
+20/08 00:37:17 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_37_2021_12_37_16.png
+20/08 00:37:17 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 00:37:20 [PageObjects.LoginPage.SignInWithValidCred:102] - SignIn with user id gireshsingh@gmail.com is successful
+20/08 00:37:20 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 00:37:20 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 00:37:20 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot2857565333462117424.png 
+20/08 00:37:20 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot2857565333462117424.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_37_2021_12_37_20.png
+20/08 00:37:20 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot2857565333462117424.png  copied to result file
+20/08 00:37:20 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_37_2021_12_37_20.png
+20/08 00:37:20 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 00:37:23 [PageObjects.LoginPage.logOutApp:117] - Logout is successful.....
+20/08 00:37:23 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 00:37:23 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 00:37:23 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot5990393560462000540.png 
+20/08 00:37:23 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot5990393560462000540.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_37_2021_12_37_23.png
+20/08 00:37:23 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot5990393560462000540.png  copied to result file
+20/08 00:37:23 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_37_2021_12_37_23.png
+20/08 00:37:23 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 00:37:23 [org.ubs.dis.framework.utilities.ExtentListener.onTestSuccess:26] - onTestSuccess - logInValid Passed
+20/08 00:37:23 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:95] - Screenshot with name logInValid is attached in extent report
+20/08 00:37:24 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:102] - Report is ready now
+20/08 00:37:24 [org.ubs.dis.framework.utilities.ExtentListener.onTestStart:20] - OnStart - logInWithInValid Started
+20/08 00:37:26 [org.ubs.dis.framework.selenium.TestBase.launchApplication:208] - Application URL: http://automationpractice.com/index.php launched successfully
+20/08 00:37:26 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 00:37:26 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 00:37:27 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot1107060108968424956.png 
+20/08 00:37:27 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot1107060108968424956.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_37_2021_12_37_26.png
+20/08 00:37:27 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot1107060108968424956.png  copied to result file
+20/08 00:37:27 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_37_2021_12_37_26.png
+20/08 00:37:27 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 00:37:27 [PageObjects.LoginPage.<init>:75] - LoginPage initiated with all its elements
+20/08 00:37:29 [PageObjects.LoginPage.clicOnSignIn:84] - Clicked on Sigin link ... and Authentication text is available
+20/08 00:37:29 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 00:37:29 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 00:37:29 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot3899313032915967565.png 
+20/08 00:37:29 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot3899313032915967565.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_37_2021_12_37_29.png
+20/08 00:37:29 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot3899313032915967565.png  copied to result file
+20/08 00:37:29 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_37_2021_12_37_29.png
+20/08 00:37:29 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 00:37:33 [PageObjects.LoginPage.SignInWithValidCred:102] - SignIn with user id gireshsingh@gmail.com is successful
+20/08 00:37:33 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 00:37:33 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 00:37:33 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot15062347287307224973.png 
+20/08 00:37:33 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot15062347287307224973.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_37_2021_12_37_33.png
+20/08 00:37:33 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot15062347287307224973.png  copied to result file
+20/08 00:37:33 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_37_2021_12_37_33.png
+20/08 00:37:33 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 00:37:39 [PageObjects.LoginPage.logOutApp:117] - Logout is successful.....
+20/08 00:37:39 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 00:37:39 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 00:37:39 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot13217332871377342332.png 
+20/08 00:37:39 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot13217332871377342332.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_37_2021_12_37_39.png
+20/08 00:37:39 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot13217332871377342332.png  copied to result file
+20/08 00:37:39 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_37_2021_12_37_39.png
+20/08 00:37:39 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 00:37:39 [org.ubs.dis.framework.utilities.ExtentListener.onTestSuccess:26] - onTestSuccess - logInWithInValid Passed
+20/08 00:37:39 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:95] - Screenshot with name logInWithInValid is attached in extent report
+20/08 00:37:39 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:102] - Report is ready now
+20/08 00:37:40 [org.ubs.dis.framework.selenium.TestBase.TearDown:112] - End of test driver closed
+20/08 00:37:40 [org.ubs.dis.framework.utilities.ExtentListener.onFinish:63] - onFinish - LogInTest Finished
+20/08 00:55:19 [org.ubs.dis.framework.read.ReadProperty.profile:33] - Project variable read successfully.
+20/08 00:55:19 [org.ubs.dis.framework.read.ReadProperty.profile:33] - Project variable read successfully.
+20/08 00:55:19 [org.ubs.dis.framework.selenium.TestBase.initializeSuiteLevel:48] - Project Property Value is: {FileDownloadPath=Data/DownloadedData/, reportName=Automation Regression Report, SeleniumVariant=webdriver, Driver=src/main/resources/driverexe/, reportColumn=strStepDesc,strExpResult,strActualResult,strStatus, FileTypeToBeDownload=application/pdf, deviceLog=src/test/reports/DeviceLog/, adblocation=/Users/administrator/android-sdks/platform-tools/adb, testdata=src/test/resources/Data/TestData/, MainReport=reports/Report/Main, objectrepository=OR/, loggerproperties=src/main/resources/config/ , logs=src/test/reports/Debuglog/, reportCss=Reports/Report/report.css, implicitWait=30, tempreportdir=test-output/html/, pageLoadWait=120, testsuite=TestSuite/Suites/, templatedir=Config/template/, explicitWait=30, ReportPath=src/test/reports/Report/, TestNG=src/main/resources/TestNGSuit/, Screenshot=src/test/reports/Report/Screenshot/, reportfailedXMl=Reports/Report/TestNGfailedxml/, RetryFailedXML=test-output/html/TestNGfailedxml/, config=config/, SystemTempFolder=C:/Users/acer/AppData/Local/Temp}
+20/08 00:55:19 [org.ubs.dis.framework.utilities.FileUtil.InitializeProject:441] - Error while creating Report Folder
+20/08 00:55:19 [org.ubs.dis.framework.utilities.FileUtil.InitializeProject:442] - Cannot invoke "java.util.HashMap.get(Object)" because "this.dicConfig" is null
+20/08 00:55:19 [org.ubs.dis.framework.utilities.ExtentListener.onStart:56] - onStart - LogInTest OnStart
+20/08 00:55:19 [org.ubs.dis.framework.selenium.WebDriverFactory.getChromeDriver:174] - Chrome Driver is initialized for WINDOWS 10 O.S
+20/08 00:55:42 [org.ubs.dis.framework.selenium.TestBase.getBrowserObject:150] - Driver with detail launched successfully:  ChromeDriver: chrome on WINDOWS (806548c24673db16c32dfc303f168f6a)
+20/08 00:55:42 [org.ubs.dis.framework.selenium.TestBase.setupBrowser:178] - Initialize Driver 684429600
+20/08 00:55:42 [org.ubs.dis.framework.selenium.WaitHelper.setImplicitWait:25] - Implicit wait is set with Timeout 30 SECONDS
+20/08 00:55:42 [org.ubs.dis.framework.selenium.WaitHelper.pageLoadTime:95] - Waiting for page to be loaded max time 120 seconds
+20/08 00:55:42 [org.ubs.dis.framework.selenium.WaitHelper.pageLoadTime:97] - Page is Loaded within specified time 120 seconds
+20/08 00:55:42 [org.ubs.dis.framework.selenium.TestBase.InitializeTestLevel:59] - BrowserType: chrome launched successfully
+20/08 00:55:43 [org.ubs.dis.framework.utilities.ExtentListener.onTestStart:20] - OnStart - logInWithInValid Started
+20/08 00:55:54 [org.ubs.dis.framework.selenium.TestBase.launchApplication:208] - Application URL: http://automationpractice.com/index.php launched successfully
+20/08 00:55:54 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 00:55:55 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 00:55:57 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot11703187404971054937.png 
+20/08 00:55:57 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot11703187404971054937.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_55_2021_12_55_55.png
+20/08 00:55:57 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot11703187404971054937.png  copied to result file
+20/08 00:55:57 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_55_2021_12_55_55.png
+20/08 00:55:57 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 00:55:58 [PageObjects.LoginPage.<init>:75] - LoginPage initiated with all its elements
+20/08 00:56:03 [PageObjects.LoginPage.clicOnSignIn:84] - Clicked on Sigin link ... and Authentication text is available
+20/08 00:56:03 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 00:56:03 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 00:56:04 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot15190207950442350303.png 
+20/08 00:56:04 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot15190207950442350303.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_56_2021_12_56_03.png
+20/08 00:56:04 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot15190207950442350303.png  copied to result file
+20/08 00:56:04 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_56_2021_12_56_03.png
+20/08 00:56:04 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 00:56:08 [PageObjects.LoginPage.SignInWithValidCred:102] - SignIn with user id gireshsingh@gmail.com is successful
+20/08 00:56:08 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 00:56:08 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 00:56:09 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot6013330259512452237.png 
+20/08 00:56:09 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot6013330259512452237.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_56_2021_12_56_08.png
+20/08 00:56:09 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot6013330259512452237.png  copied to result file
+20/08 00:56:09 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_56_2021_12_56_08.png
+20/08 00:56:09 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 00:56:13 [PageObjects.LoginPage.logOutApp:117] - Logout is successful.....
+20/08 00:56:13 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 00:56:13 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 00:56:13 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot15523080457923673301.png 
+20/08 00:56:13 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot15523080457923673301.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_56_2021_12_56_13.png
+20/08 00:56:13 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot15523080457923673301.png  copied to result file
+20/08 00:56:13 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_56_2021_12_56_13.png
+20/08 00:56:13 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 00:56:13 [org.ubs.dis.framework.utilities.ExtentListener.onTestSuccess:26] - onTestSuccess - logInWithInValid Passed
+20/08 00:56:13 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:95] - Screenshot with name logInWithInValid is attached in extent report
+20/08 00:56:16 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:102] - Report is ready now
+20/08 00:56:16 [org.ubs.dis.framework.utilities.ExtentListener.onTestStart:20] - OnStart - logInWithValid Started
+20/08 00:56:19 [org.ubs.dis.framework.selenium.TestBase.launchApplication:208] - Application URL: http://automationpractice.com/index.php launched successfully
+20/08 00:56:19 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 00:56:19 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 00:56:23 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot10531304472672558514.png 
+20/08 00:56:23 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot10531304472672558514.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_56_2021_12_56_19.png
+20/08 00:56:23 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot10531304472672558514.png  copied to result file
+20/08 00:56:23 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_56_2021_12_56_19.png
+20/08 00:56:23 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 00:56:23 [PageObjects.LoginPage.<init>:75] - LoginPage initiated with all its elements
+20/08 00:56:26 [PageObjects.LoginPage.clicOnSignIn:84] - Clicked on Sigin link ... and Authentication text is available
+20/08 00:56:26 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 00:56:26 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 00:56:26 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot15682074424668510624.png 
+20/08 00:56:26 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot15682074424668510624.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_56_2021_12_56_26.png
+20/08 00:56:26 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot15682074424668510624.png  copied to result file
+20/08 00:56:26 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_56_2021_12_56_26.png
+20/08 00:56:26 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 00:56:29 [PageObjects.LoginPage.SignInWithValidCred:102] - SignIn with user id gireshsingh@gmail.com is successful
+20/08 00:56:29 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 00:56:29 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 00:56:29 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot12766500068081325958.png 
+20/08 00:56:29 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot12766500068081325958.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_56_2021_12_56_29.png
+20/08 00:56:29 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot12766500068081325958.png  copied to result file
+20/08 00:56:29 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_56_2021_12_56_29.png
+20/08 00:56:29 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 00:56:32 [PageObjects.LoginPage.logOutApp:117] - Logout is successful.....
+20/08 00:56:32 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 00:56:32 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 00:56:32 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot10355638457374609077.png 
+20/08 00:56:32 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot10355638457374609077.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_56_2021_12_56_32.png
+20/08 00:56:32 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot10355638457374609077.png  copied to result file
+20/08 00:56:32 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_56_2021_12_56_32.png
+20/08 00:56:32 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 00:56:32 [org.ubs.dis.framework.utilities.ExtentListener.onTestSuccess:26] - onTestSuccess - logInWithValid Passed
+20/08 00:56:32 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:95] - Screenshot with name logInWithValid is attached in extent report
+20/08 00:56:33 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:102] - Report is ready now
+20/08 00:56:36 [org.ubs.dis.framework.selenium.TestBase.TearDown:112] - End of test driver closed
+20/08 00:56:36 [org.ubs.dis.framework.utilities.ExtentListener.onFinish:63] - onFinish - LogInTest Finished
+20/08 01:18:02 [org.ubs.dis.framework.read.ReadProperty.profile:33] - Project variable read successfully.
+20/08 01:18:02 [org.ubs.dis.framework.read.ReadProperty.profile:33] - Project variable read successfully.
+20/08 01:18:02 [org.ubs.dis.framework.selenium.TestBase.initializeSuiteLevel:48] - Project Property Value is: {FileDownloadPath=Data/DownloadedData/, reportName=Automation Regression Report, SeleniumVariant=webdriver, Driver=src/main/resources/driverexe/, reportColumn=strStepDesc,strExpResult,strActualResult,strStatus, FileTypeToBeDownload=application/pdf, deviceLog=src/test/reports/DeviceLog/, adblocation=/Users/administrator/android-sdks/platform-tools/adb, testdata=src/test/resources/Data/TestData/, MainReport=reports/Report/Main, objectrepository=OR/, loggerproperties=src/main/resources/config/ , logs=src/test/reports/Debuglog/, reportCss=Reports/Report/report.css, implicitWait=30, tempreportdir=test-output/html/, pageLoadWait=120, testsuite=TestSuite/Suites/, templatedir=Config/template/, explicitWait=30, ReportPath=src/test/reports/Report/, TestNG=src/main/resources/TestNGSuit/, Screenshot=src/test/reports/Report/Screenshot/, reportfailedXMl=Reports/Report/TestNGfailedxml/, RetryFailedXML=test-output/html/TestNGfailedxml/, config=config/, SystemTempFolder=C:/Users/acer/AppData/Local/Temp}
+20/08 01:18:02 [org.ubs.dis.framework.utilities.FileUtil.InitializeProject:441] - Error while creating Report Folder
+20/08 01:18:02 [org.ubs.dis.framework.utilities.FileUtil.InitializeProject:442] - Cannot invoke "java.util.HashMap.get(Object)" because "this.dicConfig" is null
+20/08 01:18:02 [org.ubs.dis.framework.utilities.ExtentListener.onStart:56] - onStart - LogInTest OnStart
+20/08 01:18:02 [org.ubs.dis.framework.selenium.WebDriverFactory.getChromeDriver:174] - Chrome Driver is initialized for WINDOWS 10 O.S
+20/08 01:18:49 [org.ubs.dis.framework.selenium.TestBase.getBrowserObject:150] - Driver with detail launched successfully:  ChromeDriver: chrome on WINDOWS (cfa43599e4bf50dbae930253775563cf)
+20/08 01:18:49 [org.ubs.dis.framework.selenium.TestBase.setupBrowser:178] - Initialize Driver 1997704619
+20/08 01:18:49 [org.ubs.dis.framework.selenium.WaitHelper.setImplicitWait:25] - Implicit wait is set with Timeout 30 SECONDS
+20/08 01:18:49 [org.ubs.dis.framework.selenium.WaitHelper.pageLoadTime:95] - Waiting for page to be loaded max time 120 seconds
+20/08 01:18:49 [org.ubs.dis.framework.selenium.WaitHelper.pageLoadTime:97] - Page is Loaded within specified time 120 seconds
+20/08 01:18:49 [org.ubs.dis.framework.selenium.TestBase.InitializeTestLevel:59] - BrowserType: chrome launched successfully
+20/08 01:18:50 [org.ubs.dis.framework.utilities.ExtentListener.onTestStart:20] - OnStart - logInWithInValid Started
+20/08 01:19:00 [org.ubs.dis.framework.selenium.TestBase.launchApplication:208] - Application URL: http://automationpractice.com/index.php launched successfully
+20/08 01:19:00 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 01:19:00 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 01:19:02 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot1950598107491822802.png 
+20/08 01:19:02 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot1950598107491822802.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_19_2021_01_19_00.png
+20/08 01:19:02 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot1950598107491822802.png  copied to result file
+20/08 01:19:02 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_19_2021_01_19_00.png
+20/08 01:19:02 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 01:19:04 [PageObjects.LoginPage.<init>:75] - LoginPage initiated with all its elements
+20/08 01:19:09 [PageObjects.LoginPage.clicOnSignIn:84] - Clicked on Sigin link ... and Authentication text is available
+20/08 01:19:09 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 01:19:09 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 01:19:10 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot8280488230872134357.png 
+20/08 01:19:10 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot8280488230872134357.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_19_2021_01_19_09.png
+20/08 01:19:10 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot8280488230872134357.png  copied to result file
+20/08 01:19:10 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_19_2021_01_19_09.png
+20/08 01:19:10 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 01:19:17 [PageObjects.LoginPage.SignInWithValidCred:102] - SignIn with user id gireshsingh@gmail.com is successful
+20/08 01:19:17 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 01:19:17 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 01:19:17 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot18390006533896954031.png 
+20/08 01:19:17 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot18390006533896954031.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_19_2021_01_19_17.png
+20/08 01:19:17 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot18390006533896954031.png  copied to result file
+20/08 01:19:17 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_19_2021_01_19_17.png
+20/08 01:19:17 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 01:19:21 [PageObjects.LoginPage.logOutApp:117] - Logout is successful.....
+20/08 01:19:21 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 01:19:21 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 01:19:21 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot6865978543677598813.png 
+20/08 01:19:21 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot6865978543677598813.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_19_2021_01_19_21.png
+20/08 01:19:21 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot6865978543677598813.png  copied to result file
+20/08 01:19:21 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_19_2021_01_19_21.png
+20/08 01:19:21 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 01:19:21 [org.ubs.dis.framework.utilities.ExtentListener.onTestSuccess:26] - onTestSuccess - logInWithInValid Passed
+20/08 01:19:21 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:95] - Screenshot with name logInWithInValid is attached in extent report
+20/08 01:19:23 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:102] - Report is ready now
+20/08 01:19:23 [org.ubs.dis.framework.utilities.ExtentListener.onTestStart:20] - OnStart - logInWithValid Started
+20/08 01:19:26 [org.ubs.dis.framework.selenium.TestBase.launchApplication:208] - Application URL: http://automationpractice.com/index.php launched successfully
+20/08 01:19:26 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 01:19:26 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 01:19:28 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot2871608103921918811.png 
+20/08 01:19:28 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot2871608103921918811.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_19_2021_01_19_26.png
+20/08 01:19:28 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot2871608103921918811.png  copied to result file
+20/08 01:19:28 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_19_2021_01_19_26.png
+20/08 01:19:28 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 01:19:36 [PageObjects.LoginPage.<init>:75] - LoginPage initiated with all its elements
+20/08 01:19:43 [PageObjects.LoginPage.clicOnSignIn:84] - Clicked on Sigin link ... and Authentication text is available
+20/08 01:19:43 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 01:19:43 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 01:19:43 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot2060315236148305955.png 
+20/08 01:19:43 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot2060315236148305955.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_19_2021_01_19_43.png
+20/08 01:19:43 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot2060315236148305955.png  copied to result file
+20/08 01:19:43 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_19_2021_01_19_43.png
+20/08 01:19:43 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 01:19:46 [PageObjects.LoginPage.SignInWithValidCred:102] - SignIn with user id gireshsingh@gmail.com is successful
+20/08 01:19:46 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 01:19:46 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 01:19:46 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot14723016577627587142.png 
+20/08 01:19:46 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot14723016577627587142.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_19_2021_01_19_46.png
+20/08 01:19:46 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot14723016577627587142.png  copied to result file
+20/08 01:19:46 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_19_2021_01_19_46.png
+20/08 01:19:46 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 01:19:49 [PageObjects.LoginPage.logOutApp:117] - Logout is successful.....
+20/08 01:19:49 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:186] - Take Screenshot on navigation ...
+20/08 01:19:49 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:123] - File Name:is blank
+20/08 01:19:49 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:129] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot5881332469890672857.png 
+20/08 01:19:49 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:133] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot5881332469890672857.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_19_2021_01_19_49.png
+20/08 01:19:49 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:135] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot5881332469890672857.png  copied to result file
+20/08 01:19:49 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:188] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_19_2021_01_19_49.png
+20/08 01:19:49 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:191] - Screenshot taken successfully
+20/08 01:19:49 [org.ubs.dis.framework.utilities.ExtentListener.onTestSuccess:26] - onTestSuccess - logInWithValid Passed
+20/08 01:19:49 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:95] - Screenshot with name logInWithValid is attached in extent report
+20/08 01:19:50 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:102] - Report is ready now
+20/08 01:20:01 [org.ubs.dis.framework.selenium.TestBase.TearDown:112] - End of test driver closed
+20/08 01:20:01 [org.ubs.dis.framework.utilities.ExtentListener.onFinish:63] - onFinish - LogInTest Finished
+20/08 01:52:44 [org.ubs.dis.framework.read.ReadProperty.profile:33] - Project variable read successfully.
+20/08 01:52:44 [org.ubs.dis.framework.read.ReadProperty.profile:33] - Project variable read successfully.
+20/08 01:52:44 [org.ubs.dis.framework.selenium.TestBase.initializeSuiteLevel:54] - Project Property Value is: {FileDownloadPath=Data/DownloadedData/, reportName=Automation Regression Report, SeleniumVariant=webdriver, Driver=src/main/resources/driverexe/, reportColumn=strStepDesc,strExpResult,strActualResult,strStatus, FileTypeToBeDownload=application/pdf, deviceLog=src/test/reports/DeviceLog/, adblocation=/Users/administrator/android-sdks/platform-tools/adb, testdata=src/test/resources/Data/TestData/, MainReport=reports/Report/Main, objectrepository=OR/, loggerproperties=src/main/resources/config/ , logs=src/test/reports/Debuglog/, reportCss=Reports/Report/report.css, implicitWait=30, tempreportdir=test-output/html/, pageLoadWait=120, testsuite=TestSuite/Suites/, templatedir=Config/template/, explicitWait=30, ReportPath=src/test/reports/Report/, TestNG=src/main/resources/TestNGSuit/, Screenshot=src/test/reports/Report/Screenshot/, reportfailedXMl=Reports/Report/TestNGfailedxml/, RetryFailedXML=test-output/html/TestNGfailedxml/, config=config/, SystemTempFolder=C:/Users/acer/AppData/Local/Temp}
+20/08 01:52:44 [org.ubs.dis.framework.utilities.FileUtil.InitializeProject:441] - Error while creating Report Folder
+20/08 01:52:44 [org.ubs.dis.framework.utilities.FileUtil.InitializeProject:442] - Cannot invoke "java.util.HashMap.get(Object)" because "this.dicConfig" is null
+20/08 01:52:44 [org.ubs.dis.framework.utilities.ExtentListener.onStart:56] - onStart - LogInTest OnStart
+20/08 01:52:44 [org.ubs.dis.framework.selenium.WebDriverFactory.getChromeDriver:174] - Chrome Driver is initialized for WINDOWS 10 O.S
+20/08 01:53:06 [org.ubs.dis.framework.selenium.TestBase.getBrowserObject:184] - Driver with detail launched successfully:  ChromeDriver: chrome on WINDOWS (a6c3cbb7f3cf758b077931b02314573b)
+20/08 01:53:06 [org.ubs.dis.framework.selenium.TestBase.setupBrowser:212] - Initialize Driver 1300528434
+20/08 01:53:06 [org.ubs.dis.framework.selenium.WaitHelper.setImplicitWait:25] - Implicit wait is set with Timeout 30 SECONDS
+20/08 01:53:06 [org.ubs.dis.framework.selenium.WaitHelper.pageLoadTime:95] - Waiting for page to be loaded max time 120 seconds
+20/08 01:53:06 [org.ubs.dis.framework.selenium.WaitHelper.pageLoadTime:97] - Page is Loaded within specified time 120 seconds
+20/08 01:53:07 [org.ubs.dis.framework.selenium.TestBase.InitializeTestLevel:69] - BrowserType: chrome launched successfully
+20/08 01:53:07 [org.ubs.dis.framework.utilities.ExtentListener.onTestStart:20] - OnStart - logInWithInValid Started
+20/08 01:53:18 [org.ubs.dis.framework.selenium.TestBase.launchApplication:242] - Application URL: http://automationpractice.com/index.php launched successfully
+20/08 01:53:18 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:220] - Take Screenshot on navigation ...
+20/08 01:53:18 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:157] - File Name:is blank
+20/08 01:53:19 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:163] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot1691668950728581093.png 
+20/08 01:53:19 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:167] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot1691668950728581093.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_53_2021_01_53_18.png
+20/08 01:53:19 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:169] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot1691668950728581093.png  copied to result file
+20/08 01:53:19 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:222] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_53_2021_01_53_18.png
+20/08 01:53:19 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:225] - Screenshot taken successfully
+20/08 01:53:20 [PageObjects.LoginPage.<init>:75] - LoginPage initiated with all its elements
+20/08 01:53:24 [PageObjects.LoginPage.clicOnSignIn:84] - Clicked on Sigin link ... and Authentication text is available
+20/08 01:53:24 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:220] - Take Screenshot on navigation ...
+20/08 01:53:24 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:157] - File Name:is blank
+20/08 01:53:25 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:163] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot5783818269033696558.png 
+20/08 01:53:25 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:167] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot5783818269033696558.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_53_2021_01_53_24.png
+20/08 01:53:25 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:169] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot5783818269033696558.png  copied to result file
+20/08 01:53:25 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:222] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_53_2021_01_53_24.png
+20/08 01:53:25 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:225] - Screenshot taken successfully
+20/08 01:53:29 [PageObjects.LoginPage.SignInWithValidCred:102] - SignIn with user id gireshsingh@gmail.com is successful
+20/08 01:53:29 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:220] - Take Screenshot on navigation ...
+20/08 01:53:29 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:157] - File Name:is blank
+20/08 01:53:29 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:163] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot5263669598265249070.png 
+20/08 01:53:29 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:167] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot5263669598265249070.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_53_2021_01_53_29.png
+20/08 01:53:29 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:169] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot5263669598265249070.png  copied to result file
+20/08 01:53:29 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:222] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_53_2021_01_53_29.png
+20/08 01:53:29 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:225] - Screenshot taken successfully
+20/08 01:53:32 [PageObjects.LoginPage.logOutApp:117] - Logout is successful.....
+20/08 01:53:32 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:220] - Take Screenshot on navigation ...
+20/08 01:53:32 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:157] - File Name:is blank
+20/08 01:53:32 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:163] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot5513755811857205718.png 
+20/08 01:53:32 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:167] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot5513755811857205718.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_53_2021_01_53_32.png
+20/08 01:53:32 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:169] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot5513755811857205718.png  copied to result file
+20/08 01:53:32 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:222] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_53_2021_01_53_32.png
+20/08 01:53:32 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:225] - Screenshot taken successfully
+20/08 01:53:32 [org.ubs.dis.framework.utilities.ExtentListener.onTestSuccess:26] - onTestSuccess - logInWithInValid Passed
+20/08 01:53:34 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:131] - Report is ready now
+20/08 01:53:34 [org.ubs.dis.framework.utilities.ExtentListener.onTestStart:20] - OnStart - logInWithValid Started
+20/08 01:53:37 [org.ubs.dis.framework.selenium.TestBase.launchApplication:242] - Application URL: http://automationpractice.com/index.php launched successfully
+20/08 01:53:37 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:220] - Take Screenshot on navigation ...
+20/08 01:53:37 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:157] - File Name:is blank
+20/08 01:53:38 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:163] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot12044953431723130620.png 
+20/08 01:53:38 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:167] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot12044953431723130620.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_53_2021_01_53_37.png
+20/08 01:53:38 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:169] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot12044953431723130620.png  copied to result file
+20/08 01:53:38 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:222] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_53_2021_01_53_37.png
+20/08 01:53:38 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:225] - Screenshot taken successfully
+20/08 01:53:38 [PageObjects.LoginPage.<init>:75] - LoginPage initiated with all its elements
+20/08 01:53:41 [PageObjects.LoginPage.clicOnSignIn:84] - Clicked on Sigin link ... and Authentication text is available
+20/08 01:53:41 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:220] - Take Screenshot on navigation ...
+20/08 01:53:41 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:157] - File Name:is blank
+20/08 01:53:41 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:163] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot6965427468822553271.png 
+20/08 01:53:41 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:167] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot6965427468822553271.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_53_2021_01_53_41.png
+20/08 01:53:41 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:169] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot6965427468822553271.png  copied to result file
+20/08 01:53:41 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:222] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_53_2021_01_53_41.png
+20/08 01:53:41 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:225] - Screenshot taken successfully
+20/08 01:53:45 [PageObjects.LoginPage.SignInWithValidCred:102] - SignIn with user id gireshsingh@gmail.com is successful
+20/08 01:53:45 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:220] - Take Screenshot on navigation ...
+20/08 01:53:45 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:157] - File Name:is blank
+20/08 01:53:45 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:163] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot751593593963205277.png 
+20/08 01:53:45 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:167] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot751593593963205277.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_53_2021_01_53_45.png
+20/08 01:53:45 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:169] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot751593593963205277.png  copied to result file
+20/08 01:53:45 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:222] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_53_2021_01_53_45.png
+20/08 01:53:45 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:225] - Screenshot taken successfully
+20/08 01:53:48 [PageObjects.LoginPage.logOutApp:117] - Logout is successful.....
+20/08 01:53:48 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:220] - Take Screenshot on navigation ...
+20/08 01:53:48 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:157] - File Name:is blank
+20/08 01:53:48 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:163] - Source File Name: C:\Users\acer\AppData\Local\Temp\screenshot5402115851424536385.png 
+20/08 01:53:48 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:167] - Source Screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot5402115851424536385.png  copied to Destination file : src\test\reports\Report\Screenshot\blank_20_53_2021_01_53_48.png
+20/08 01:53:48 [org.ubs.dis.framework.selenium.TestBase.CaptureScreen:169] - Link for screenshot file: C:\Users\acer\AppData\Local\Temp\screenshot5402115851424536385.png  copied to result file
+20/08 01:53:48 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:222] - Screenshot saved on path D:\automationframework\src\test\reports\Report\Screenshot\blank_20_53_2021_01_53_48.png
+20/08 01:53:48 [org.ubs.dis.framework.selenium.TestBase.TakeScreenShot:225] - Screenshot taken successfully
+20/08 01:53:48 [org.ubs.dis.framework.utilities.ExtentListener.onTestSuccess:26] - onTestSuccess - logInWithValid Passed
+20/08 01:53:49 [org.ubs.dis.framework.selenium.TestBase.afterTestResult:131] - Report is ready now
+20/08 01:53:50 [org.ubs.dis.framework.selenium.TestBase.TearDown:146] - End of test driver closed
+20/08 01:53:50 [org.ubs.dis.framework.utilities.ExtentListener.onFinish:63] - onFinish - LogInTest Finished

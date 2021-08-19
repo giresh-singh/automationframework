@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite">
+    <listeners>
+<!--        <listener class-name="org.ubs.dis.framework.utilities.RetryListener"></listener>-->
+        <listener class-name="org.ubs.dis.framework.utilities.ExtentListener"></listener>
+    </listeners>
+    <test name="A">
+        <classes>
+            <class name="org.ubs.dis.framework.Execution.A"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="B">
+        <classes>
+            <class name="org.ubs.dis.framework.Execution.B"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="C">
+        <classes>
+            <class name="org.ubs.dis.framework.Execution.C"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="LogInTest">
+        <classes>
+            <class name="TestScripts.LogInTest"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
