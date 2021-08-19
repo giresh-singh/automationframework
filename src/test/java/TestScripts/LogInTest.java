@@ -6,9 +6,26 @@ import org.testng.annotations.Test;
 import org.ubs.dis.framework.selenium.TestBase;
 import org.ubs.dis.framework.utilities.LoggerHelper;
 
+/**
+ //#########################################################################
+ //# Test Name: LogInTest
+ //# Test Case Id: 1
+ //# Description: Objective of this test is to verify login to application
+ //# -----------------------------------------------------------------------
+ //# Objective: Test Valid credential login
+ //#            Test invalid credential login messages
+ //# -----------------------------------------------------------------------
+ //# Created By: Varsha Singh
+ //# Created Dated: 17-Aug-2021
+ //# -----------------------------------------------------------------------
+ //# History:
+ //#########################################################################
+ */
+
 public class LogInTest extends TestBase {
     private Logger log = LoggerHelper.getLogger(LogInTest.class);
     boolean blnStep = false;
+    //Test Methode for valid credentials
     @Test(description = "Login with valid credentials")
     public void logInWithValid(){
         // Step# 2: Test Case Objective
@@ -50,6 +67,7 @@ public class LogInTest extends TestBase {
 
     }
 
+    //Test Methode for invalid credentials
     @Test(description = "Login with invalid credentials")
     public void logInWithInValid(){
         reportStep("","<b> Test Description: </b><br> Verify user is not able to login with invalid credentials ");
