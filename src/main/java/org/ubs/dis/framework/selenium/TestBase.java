@@ -25,6 +25,7 @@ import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -92,9 +93,8 @@ public class TestBase {
      */
     @BeforeMethod
     public void InitializeTestMethod(Method method, ITestContext testContext){
-        //test.log(Status.INFO,method.getName()+" Method started");
         test = extent.createTest(method.getName());
-        reportStep("INFO","Test Case: <b>"+testContext.getName()+"</b> Started");
+        reportStep(testContext,"INFO","Test Case: <b>"+testContext.getName()+"</b> Started");
     }
 
     /**
@@ -127,6 +127,13 @@ public class TestBase {
 
 
     public String CaptureScreen(String fileName, WebDriver driver){
+        Random random = new Random();
+        String TCName = fileName;
+        FileUtil futil = new FileUtil();
+        String ScreenShotFolder = (String)dicProjectVar.get("Screenshot")+TCName+"/";
+        futil.createDirectory(ScreenShotFolder,false);
+        log.info(String.format("screenshot Folder %s",ScreenShotFolder));
+        int randCode = random.nextInt(0x186a0);
         if(driver == null){
             log.info("driver is null ....");
             return null;
@@ -137,17 +144,18 @@ public class TestBase {
         }
         File destFile = null;
         Calendar calender = Calendar.getInstance();
-        SimpleDateFormat formater = new SimpleDateFormat("dd_mm_yyyy_hh_mm_ss");
+        SimpleDateFormat formater = new SimpleDateFormat("HH_mm_ss_SSSSSS");
         File screFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         log.info(String.format("Source File Name: %s ",screFile.toPath().toString()));
         try{
-            destFile = new File((String)dicProjectVar.get("Screenshot")+fileName+"_"+formater.format(calender.getTime())+".png");
+            destFile = new File((String)dicProjectVar.get("Screenshot")+TCName+"/"+fileName+"_"+formater.format(calender.getTime())+"_"+randCode+".png");
             Files.copy(screFile.toPath(),destFile.toPath());
             log.info(String.format("Source Screenshot file: %s  copied to Destination file : %s",screFile.toPath().toString(),destFile.toPath()));
             Reporter.log("<a href='"+destFile.getAbsolutePath()+"'><img src='"+destFile.getAbsolutePath()+"' height='100' width='100'/></a>");
             log.info(String.format("Link for screenshot file: %s  copied to result file",screFile.toPath().toString()));
         }catch (Exception e){
             e.printStackTrace();
+            log.error(e.getMessage());
         }
         return destFile.getAbsolutePath().toString();
     }
@@ -195,9 +203,10 @@ public class TestBase {
         driver.manage().window().maximize();
     }
 
-    public void TakeScreenShot(WebDriver driver){
+    public void TakeScreenShot(WebDriver driver,String TCName){
         log.info(String.format("Take Screenshot on navigation ..."));
-        String screen = CaptureScreen("",driver);
+        log.info(String.format("Capture Scree for Test Case - %s",TCName));
+        String screen = CaptureScreen(TCName,driver);
         log.info(String.format("Screenshot saved on path %s",screen));
         try{
             test.addScreenCaptureFromPath(screen);
@@ -231,16 +240,24 @@ public class TestBase {
         return true;
     }
 
-    public void reportStep(String strStatus,String strDetail) {
+    /***
+     * @Description: This function is used to report steps and capture screen
+     * @param strStatus,strDetail Status - PASS/FAIL/INFO, Detail- Pass/fail detail
+     * @return none
+     * @author Varsha Singh
+     * @Since 17/Aug/2021
+     */
+    public void reportStep(ITestContext testContext,String strStatus,String strDetail) {
+        String TCName = testContext.getCurrentXmlTest().getName();
         switch (strStatus.toLowerCase()) {
             case "pass":
                 test.log(Status.PASS, strDetail);
-                TakeScreenShot(driver);
+                TakeScreenShot(driver,TCName);
                 break;
             case "fail":
                 test.fail(strDetail);
                 test.fail(result.getThrowable());
-                TakeScreenShot(driver);
+                TakeScreenShot(driver,TCName);
                 break;
             default:
                 test.info(strDetail);
