@@ -10,4 +10,9 @@
             <class name="TestScripts.LogInTest"/>
         </classes>
     </test> <!-- Test -->
+    <test name="RegisterNewUserTest">
+        <classes>
+            <class name="TestScripts.RegisterNewUserTest"/>
+        </classes>
+    </test> <!-- Test -->
 </suite> <!-- Suite -->

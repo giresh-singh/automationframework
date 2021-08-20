@@ -41,6 +41,7 @@ public class TestBase {
     public Logger log = LoggerHelper.getLogger(TestBase.class);
     public WebDriver driver;
 
+
     /**
      * @Description: Initialise Suite level objects and methods
      * @Example: Read Framework properties, configs,clean and move old results and xml files e.t.c

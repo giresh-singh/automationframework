@@ -27,6 +27,11 @@ public class LogInTest extends TestBase {
     private Logger log = LoggerHelper.getLogger(LogInTest.class);
     boolean blnStep = false;
     private String strDescription = "";
+    /**
+    //############################################################
+    //# Test Data:  TestData can be added in dicTestData.put(k,v)
+    //############################################################
+     */
     //Test Methode for valid credentials
     @Test(description = "Login with valid credentials")
     public void logInWithValid(ITestContext testContext){
