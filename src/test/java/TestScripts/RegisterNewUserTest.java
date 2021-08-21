@@ -94,6 +94,7 @@ public class RegisterNewUserTest extends TestBase {
         // Step# 7: Enter Personal Information
         fName = regiUserPage.generateRandString(5);
         lName = regiUserPage.generateRandString(5);
+        personalInfo = String.format("First Name: <b>%s</b><br>Last Name: <b>%s</b></br><br>Password: <b>%s</b></br> entered successfully",fName,lName,strPassword);
         blnStep = regiUserPage.fillPersonalInfo(fName,lName,strPassword);
         if (blnStep) {
             reportStep(testContext, "PASS",personalInfo);
