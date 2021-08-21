@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 public class FileUtil {
     Logger log;
-    HashMap<String,String>dicConfig;
+    //HashMap<String,String>dicConfig;
     HashMap<String,String>dicTestSuite;
     //HashMap<String,String>dicProjectVar = TestBase.dicProjectVar;
     HashMap<String,String>dicReport;
@@ -103,7 +103,7 @@ public class FileUtil {
         }
         catch(Exception ex)
         {
-            if(!((String)dicConfig.get("SystemTempFolder")).contains("/AppData/Local/Temp/"))
+            if(!((String) TestBase.dicConfig.get("SystemTempFolder")).contains("/AppData/Local/Temp/"))
                 log.error((new StringBuilder("Error while deleting folder at ")).append(file).toString());
         }
     }

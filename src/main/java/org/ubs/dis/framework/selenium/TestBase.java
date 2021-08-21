@@ -60,11 +60,10 @@ public class TestBase {
         log.info(String.format("Project Property Value is: %s",dicProjectVar));
         log.info("Read Config Properties......");
         dicConfig = prop.profile("src/main/resources/config/Config.properties");
-        log.info(String.format("Project Property Value is: %s",dicConfig));
+        log.info(String.format("Project Config Value is: %s",dicConfig));
         FileUtil obj = new FileUtil();
         obj.InitializeProject();
     }
-
     /**
      * @Description: Initialise Test level objects and methods
      * @Example: Launch and Setup browser, create Extent Report Object, get test data e.t.c
@@ -84,7 +83,6 @@ public class TestBase {
         //ReadExcel read = new ReadExcel(); ----- TBD
         //dicTestData = read.exlReadMatserTestData(testContext.getCurrentXmlTest().getName()); --- TBD
     }
-
     /**
      * @Description: Initialise Test case level needs
      * @Example: test methode related data etc
@@ -98,7 +96,6 @@ public class TestBase {
         log.info(String.format("......................................................"));
         // TBD
     }
-
     /**
      * @Description: Initialise Test methode level objects and data
      * @Example: test methode related data and report preparations etc
@@ -114,14 +111,12 @@ public class TestBase {
         log.info(String.format("......................................................"));
         //reportStep(testContext,"INFO","Test Case: <b>"+testContext.getName()+"</b> Started");
     }
-
     /**
      * @Description: Prepare report, clear test data etc
      * @Example: test methode related data and report preparations etc
      * @Author: Varsha Singh
      * @Date:
      */
-
     @AfterMethod
     public void PrepareTestResult(ITestResult result,ITestContext testContext){
         log.info(String.format("......................................................"));
@@ -136,7 +131,6 @@ public class TestBase {
             log.error(ex.getMessage());
         }
     }
-
     /**
      * @Description: Initialise Test methode level objects and data
      * @Example: test methode related data and report preparations etc
@@ -152,7 +146,6 @@ public class TestBase {
         driver.quit();
         log.info(String.format(".......End of test -> driver closed......."));
     }
-
 
     @AfterSuite
     public void Clean(){
