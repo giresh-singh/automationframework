@@ -428,7 +428,7 @@ public class FileUtil {
                     //Now create ScreenShot folder
                     createDirectory(TestBase.dicProjectVar.get("Screenshot"),false);
                     //Create TestNG Suit XML Folder
-                    createDirectory(TestBase.dicProjectVar.get("TestNG"),true);
+                   //createDirectory(TestBase.dicProjectVar.get("TestNG"),true);
                     //Delete System Temp Folder and Debuglog
                     if(System.getProperty("os.name").contains("Window")){
                         delete(new File(TestBase.dicProjectVar.get("SystemTempFolder")));
