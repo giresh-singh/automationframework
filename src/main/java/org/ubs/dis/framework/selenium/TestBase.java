@@ -49,10 +49,11 @@ public class TestBase {
      * @Date:
      */
     @BeforeSuite
-    public void initializeSuiteLevel(){
+    public void initializeSuiteLevel(ITestContext testContext){
         log.info(String.format("......................................................"));
         log.info(String.format("................Before Suite ........................."));
-        log.info(String.format("......................................................"));
+        log.info(String.format(".............Test Suite -> %s Started ..................",testContext.getSuite().getName()));
+        //log.info(String.format(".............Test Case -> %s Started ..................",testContext.getName()));
         ReadProperty prop = new ReadProperty();
         log.info("Read Framework Properties......");
         dicProjectVar = prop.profile("src/main/resources/config/framework-config.properties");
@@ -120,11 +121,13 @@ public class TestBase {
      * @Author: Varsha Singh
      * @Date:
      */
+
     @AfterMethod
     public void PrepareTestResult(ITestResult result,ITestContext testContext){
         log.info(String.format("......................................................"));
         log.info(String.format("................After Method ........................."));
         log.info(String.format("......................................................"));
+
         try {
             extent.flush();
             log.info(String.format("Report is ready now for Test Case: %s -> Test Method: %s"
@@ -150,6 +153,7 @@ public class TestBase {
         log.info(String.format(".......End of test -> driver closed......."));
     }
 
+
     @AfterSuite
     public void Clean(){
         log.info(String.format("......................................................"));
@@ -160,7 +164,6 @@ public class TestBase {
         dicConfig.clear();
         log.info(String.format("dicConfig cleared ......"));
     }
-
 
     public String CaptureScreen(String fileName, WebDriver driver){
         Random random = new Random();
@@ -283,6 +286,7 @@ public class TestBase {
      * @author Varsha Singh
      * @Since 17/Aug/2021
      */
+
     public void reportStep(ITestContext testContext,String strStatus,String strDetail) {
         String TCName = testContext.getCurrentXmlTest().getName();
         switch (strStatus.toLowerCase()) {
@@ -291,12 +295,14 @@ public class TestBase {
                 TakeScreenShot(driver,TCName);
                 break;
             case "fail":
-                test.fail(strDetail);
-                test.fail(result.getThrowable());
+                //test.fail(strDetail);
+                test.log(Status.FAIL,strDetail);
                 TakeScreenShot(driver,TCName);
+                //test.fail(result.getThrowable());
                 break;
             default:
                 test.info(strDetail);
         }
     }
+
 }
