@@ -50,6 +50,9 @@ public class TestBase {
      */
     @BeforeSuite
     public void initializeSuiteLevel(){
+        log.info(String.format("......................................................"));
+        log.info(String.format("................Before Suite ........................."));
+        log.info(String.format("......................................................"));
         ReadProperty prop = new ReadProperty();
         log.info("Read Framework Properties......");
         dicProjectVar = prop.profile("src/main/resources/config/framework-config.properties");
@@ -69,6 +72,9 @@ public class TestBase {
      */
     @BeforeTest
     public void InitializeTestLevel(ITestContext testContext){
+        log.info(String.format("......................................................"));
+        log.info(String.format(".................Before Test ........................."));
+        log.info(String.format("......................................................"));
         //Setup Browser
         setupBrowser(dicConfig.get("BrowserType"));
         log.info(String.format("BrowserType: %s launched successfully",dicConfig.get("BrowserType")));
@@ -86,6 +92,9 @@ public class TestBase {
      */
     @BeforeClass
     public void getExtentTestInstance(){
+        log.info(String.format("......................................................"));
+        log.info(String.format("................Before Class ........................."));
+        log.info(String.format("......................................................"));
         // TBD
     }
 
@@ -97,8 +106,12 @@ public class TestBase {
      */
     @BeforeMethod
     public void InitializeTestMethod(Method method, ITestContext testContext){
+        log.info(String.format("......................................................"));
+        log.info(String.format("...............Before Method ........................."));
         test = extent.createTest(method.getName());
-        reportStep(testContext,"INFO","Test Case: <b>"+testContext.getName()+"</b> Started");
+        log.info(String.format("Execution of Test Case: %s -> Test Method: %s Started......",testContext.getCurrentXmlTest().getName(),method.getName()));
+        log.info(String.format("......................................................"));
+        //reportStep(testContext,"INFO","Test Case: <b>"+testContext.getName()+"</b> Started");
     }
 
     /**
@@ -109,9 +122,13 @@ public class TestBase {
      */
     @AfterMethod
     public void PrepareTestResult(ITestResult result,ITestContext testContext){
+        log.info(String.format("......................................................"));
+        log.info(String.format("................After Method ........................."));
+        log.info(String.format("......................................................"));
         try {
             extent.flush();
-            log.info(String.format("Report is ready now"));
+            log.info(String.format("Report is ready now for Test Case: %s -> Test Method: %s"
+                    ,testContext.getCurrentXmlTest().getName(),result.getMethod().getMethodName()));
         }catch(Exception ex){
             log.error(ex.getMessage());
         }
@@ -124,9 +141,24 @@ public class TestBase {
      * @Date:
      */
     @AfterTest
-    public void TearDown(){
+    public void TearDown(ITestContext testContext){
+        log.info(String.format("......................................................"));
+        log.info(String.format("...................After Test........................."));
+        log.info(String.format("......................................................"));
+        log.info(String.format(".........Execution Completed for Test Case %s ......",testContext.getCurrentXmlTest().getName()));
         driver.quit();
-        log.info(String.format("End of test driver closed"));
+        log.info(String.format(".......End of test -> driver closed......."));
+    }
+
+    @AfterSuite
+    public void Clean(){
+        log.info(String.format("......................................................"));
+        log.info(String.format("...................After Suite........................."));
+        log.info(String.format("......................................................"));
+        dicProjectVar.clear();
+        log.info(String.format("dicProjectVar cleared ......"));
+        dicConfig.clear();
+        log.info(String.format("dicConfig cleared ......"));
     }
 
 
