@@ -17,7 +17,7 @@ public class ExtentListener implements ITestListener {
     public void onTestStart(ITestResult iTestResult) {
         //test.log(Status.INFO,iTestResult.getName()+" Started ...");
         Reporter.log(iTestResult.getName()+" Started ...");
-        log.info(String.format("OnStart - %s Started",iTestResult.getName()));
+        log.info(String.format("OnTestStart - %s Started",iTestResult.getName()));
     }
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
