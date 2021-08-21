@@ -51,9 +51,12 @@ public class TestBase {
     @BeforeSuite
     public void initializeSuiteLevel(){
         ReadProperty prop = new ReadProperty();
+        log.info("Read Framework Properties......");
         dicProjectVar = prop.profile("src/main/resources/config/framework-config.properties");
-        dicConfig = prop.profile("src/main/resources/config/Config.properties");
         log.info(String.format("Project Property Value is: %s",dicProjectVar));
+        log.info("Read Config Properties......");
+        dicConfig = prop.profile("src/main/resources/config/Config.properties");
+        log.info(String.format("Project Property Value is: %s",dicConfig));
         FileUtil obj = new FileUtil();
         obj.InitializeProject();
     }

@@ -224,8 +224,10 @@ public class RegisterNewUserPage {
     public boolean fillYourAddress(String fName,String lName, String company,String address1,String strCity){
         boolean blnFlag = false;
         try{
+            txtFName.clear();
             txtFName.sendKeys(fName);
             Threadwait();
+            txtLName.clear();
             txtLName.sendKeys(lName);
             Threadwait();
             txtCompany.sendKeys(company);
@@ -245,7 +247,7 @@ public class RegisterNewUserPage {
     }
 
     public boolean selectState(String strStateName){
-        return Select(dropState,"Florida","visibletext");
+        return Select(dropState,strStateName,"visibletext");
     }
 
     public boolean enterZipCode(String strZip){
@@ -259,11 +261,20 @@ public class RegisterNewUserPage {
         }
     }
 
+    public boolean selectCountry(String strCountryName){
+
+        return Select(dropCountry,strCountryName,"visibletext");
+    }
+
     public boolean fillMobileDetails(String strHomePhone, String strMobile,String strAliasAdd){
         try {
             txtHomePhone.sendKeys(strHomePhone);
             Threadwait();
             txtMobilePhone.sendKeys(strMobile);
+            Threadwait();
+            txtAliasAddress.click();
+            Threadwait();
+            txtAliasAddress.clear();
             Threadwait();
             txtAliasAddress.sendKeys(strAliasAdd);
             Threadwait();
@@ -296,6 +307,7 @@ public class RegisterNewUserPage {
             return blnFlag = true;
         }catch(Exception ex){
             log.error(String.format("Not able Logout from application getting error %s",ex.getMessage()));
+            ErrDescription = ex.getMessage();
             return  blnFlag;
         }
     }

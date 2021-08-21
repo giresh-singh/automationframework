@@ -30,7 +30,7 @@ public class ReadProperty {
                 k = iterator.next();
 
             fis.close();
-            log.info("Project variable read successfully.");
+            log.info(String.format("Property File: %s  read successfully.",ProFile));
         }
         catch(Exception ex)
         {

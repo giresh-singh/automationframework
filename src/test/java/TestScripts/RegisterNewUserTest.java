@@ -55,7 +55,7 @@ public class RegisterNewUserTest extends TestBase {
     @Test(description = "Login with valid credentials")
     public void RegisterWithValid(ITestContext testContext) {
         // Step# 2: Test Case Objective
-        strDescription = "<b> Test Description: </b><br> Verify user is able to login with valid credentials</br> ";
+        strDescription = "<b> Test Description: </b><br> Verify user is able to Register with valid details</br> ";
         reportStep(testContext, "INFO", strDescription);
         // Step# 3: Launch application
         blnStep = launchApplication(dicConfig.get("strApplicationURL"));
@@ -108,7 +108,7 @@ public class RegisterNewUserTest extends TestBase {
         }
 
         // Step# 9: Enter Personal Information Address
-        blnStep = regiUserPage.fillYourAddress(fName,lName,"Coforge","Punta Gorda, FL 33955, United States","Charlotte");
+        blnStep = regiUserPage.fillYourAddress(fName,lName,"Coforge","Punta Gorda","Charlotte");
         if (blnStep) {
             reportStep(testContext, "PASS",addressInfo);
         } else {
@@ -116,9 +116,18 @@ public class RegisterNewUserTest extends TestBase {
         }
 
         // Step# 10: Enter Personal Information Address
-        blnStep = regiUserPage.fillYourAddress(fName,lName,"Coforge","Punta Gorda, FL 33955, United States","Charlotte");
+        //blnStep = regiUserPage.fillYourAddress(fName,lName,"Coforge","Punta Gorda, FL 33955, United States","Charlotte");
+        blnStep = regiUserPage.selectState("Florida");
         if (blnStep) {
-            reportStep(testContext, "PASS",addressInfo);
+            reportStep(testContext, "PASS",String.format("State <b>%s</b> selected","Florida"));
+        } else {
+            reportStep(testContext, "FAIL", regiUserPage.ErrDescription);
+        }
+
+        //Step 11 Select Country United States
+        blnStep = regiUserPage.selectCountry("United States");
+        if (blnStep) {
+            reportStep(testContext, "PASS",String.format("Country <b>%s</b> selected","United States"));
         } else {
             reportStep(testContext, "FAIL", regiUserPage.ErrDescription);
         }
@@ -146,7 +155,6 @@ public class RegisterNewUserTest extends TestBase {
         } else {
             reportStep(testContext, "FAIL", regiUserPage.ErrDescription);
         }
-
         // Step# 14: Click on logout
         blnStep = regiUserPage.logOutApp();
         if (blnStep) {
