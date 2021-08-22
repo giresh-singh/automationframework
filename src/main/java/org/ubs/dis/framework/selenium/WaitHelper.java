@@ -97,4 +97,25 @@ public class WaitHelper {
         log.info(String.format("Page is Loaded within specified time %s seconds",timeOutInSeconds));
     }
 
+    /***
+     * This function perform wait operation.
+     * @param WaitInSecond Optional Timeout (default - 1 Sec)
+     * @return True/False
+     * @author Varsh Singh
+     * @Since 18/Aug/2021
+     */
+    public boolean Threadwait(int... WaitInSecond){
+        boolean flag=false;
+        int Timeout=1000;
+        if(WaitInSecond.length!=0){
+            Timeout=Timeout*WaitInSecond[0];
+        }
+        try{
+            Thread.sleep(Timeout);
+        }catch(Exception ex){
+            flag=false;
+        }
+        return flag;
+    }
+
 }

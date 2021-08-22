@@ -43,7 +43,8 @@ public class LogInTest extends TestBase {
         if(blnStep){
             reportStep(testContext,"PASS","strApplicationURL <b>"+dicConfig.get("strApplicationURL")+"</b> launched successfully");
         }else{
-            reportStep(testContext,"FAIL","strApplicationURL <b>"+dicConfig.get("strApplicationURL")+"</b> fail to launch");
+            reportStep(testContext,"FAIL",ErrDescription);
+            return;
         }
 
         // Step# : Create Login Page Objects
@@ -54,7 +55,8 @@ public class LogInTest extends TestBase {
         if(blnStep){
             reportStep(testContext,"PASS","<b>SignIn</b> link clicked");
         }else{
-            reportStep(testContext,"FAIL","<b>SignIn</b> link not clicked and error is as - ");
+            reportStep(testContext,"FAIL",loginPage.ErrDescription);
+            return;
         }
 
         // Step# 5: Enter User Id, Password and click on Sign In button
@@ -62,7 +64,7 @@ public class LogInTest extends TestBase {
         if(blnStep){
             reportStep(testContext,"PASS","User id: <b>"+dicConfig.get("userid")+"</b> successfully logged in");
         }else{
-            reportStep(testContext,"FAIL","<b>SignIn</b> link not clicked and error is as - ");
+            reportStep(testContext,"FAIL",loginPage.ErrDescription);
         }
 
         // Step# 6: Click on Logout button
@@ -70,24 +72,9 @@ public class LogInTest extends TestBase {
         if(blnStep){
             reportStep(testContext,"PASS","User id: <b>"+dicConfig.get("userid")+"</b> successfully logout");
         }else{
-            reportStep(testContext,"FAIL","Not able to logout and error is as - ");
+            reportStep(testContext,"FAIL",loginPage.ErrDescription);
         }
 
-    }
-
-    //Test Methode for invalid credentials
-    @Test(description = "Login with invalid credentials")
-    public void logInWithInValid(ITestContext testContext){
-        reportStep(testContext,"","<b> Test Description: </b><br> Verify user is not able to login with invalid credentials ");
-        launchApplication(dicConfig.get("strApplicationURL"));
-        reportStep(testContext,"PASS","strApplicationURL <b>"+dicConfig.get("strApplicationURL")+"</b> launched successfully");
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.clicOnSignIn();
-        reportStep(testContext,"PASS","<b>SignIn</b> link clicked");
-        loginPage.SignInWithValidCred(dicConfig.get("userid"),dicConfig.get("password"));
-        reportStep(testContext,"PASS",String.format("User id: <b> %s </b> and password: <b> %s </b> enter and clicked on Sign In button",dicConfig.get("userid"),dicConfig.get("password")));
-        loginPage.logOutApp();
-        reportStep(testContext,"PASS","<b>Log Out</b> link clicked successfully");
     }
 
 }

@@ -28,7 +28,7 @@ import java.util.Random;
 public class RegisterNewUserTest extends TestBase {
     private Logger log = LoggerHelper.getLogger(RegisterNewUserTest.class);
     boolean blnStep = false;
-    private String strDescription = "";
+    public static String strDescription = "";
     Random random = new Random();
 
     /**
@@ -62,7 +62,7 @@ public class RegisterNewUserTest extends TestBase {
         if (blnStep) {
             reportStep(testContext, "PASS", "strApplicationURL <b>" + dicConfig.get("strApplicationURL") + "</b> launched successfully");
         } else {
-            reportStep(testContext, "FAIL", "strApplicationURL <b>" + dicConfig.get("strApplicationURL") + "</b> fail to launch");
+            reportStep(testContext, "FAIL", ErrDescription);
         }
 
         // Step# : Create Login Page Objects
@@ -165,8 +165,5 @@ public class RegisterNewUserTest extends TestBase {
         } else {
             reportStep(testContext, "FAIL", regiUserPage.ErrDescription);
         }
-
-
-
     }
 }

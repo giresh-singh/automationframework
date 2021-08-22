@@ -40,7 +40,7 @@ public class TestBase {
     public static ITestResult result;
     public Logger log = LoggerHelper.getLogger(TestBase.class);
     public WebDriver driver;
-
+    public String ErrDescription = "";
 
     /**
      * @Description: Initialise Suite level objects and methods
@@ -260,16 +260,19 @@ public class TestBase {
             if(strUrl.length!=0){
                 driver.get(strUrl[0]);
                 log.info(String.format("Application URL: %s launched successfully",strUrl[0]));
+                return true;
             }else{
                 driver.get(TestBase.dicConfig.get("strApplicationURL"));
                 log.info(String.format("Application URL (Config) : %s launched successfully",strUrl[0]));
+                ErrDescription = String.format("Application URL (Config) : %s launched successfully",strUrl[0]);
+                return false;
             }
 
         }catch(Exception ex){
             log.error(String.format("Not able launch URL %s getting below error \n%s",strUrl,ex.getMessage()));
+            ErrDescription = String.format("Not able launch URL %s getting below error \n%s",strUrl,ex.getMessage());
             return false;
         }
-        return true;
     }
 
     /***

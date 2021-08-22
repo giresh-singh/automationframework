@@ -141,6 +141,7 @@ public class RegisterNewUserPage {
             return blnFlag=true;
         } catch (Exception ex) {
             log.error(String.format("Not able to click on SignIn getting error %s", ex.getMessage()));
+            ErrDescription = String.format("Not able to click on SignIn getting error %s", ex.getMessage());
             return blnFlag;
         }
     }

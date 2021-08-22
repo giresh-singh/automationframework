@@ -1,61 +1,294 @@
 package org.ubs.dis.framework.selenium;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.testng.ITestContext;
-import org.testng.annotations.Optional;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.ubs.dis.framework.utilities.LoggerHelper;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 
 public class SeleniumHelper {
-    //HashMap<String,String> dicConfig;
+    private final WebDriver driver;
     private Logger log = LoggerHelper.getLogger(SeleniumHelper.class);
-    private WebDriver driver;
-    protected String ErrDescription = "";
-    //private String driverType=TestBase.dicConfig.get("SeleniumVariant").toLowerCase();
-    //protected Browser browser;
-    public static HashMap<String, String> dicProjectVar;
-    public static ExtentReports extent;
-    public static ExtentTest test;
-
-    ITestContext testContext;
-
-    //Constructor
+    public String ErrDescription = "";
+    public WaitHelper waitHelper;
     public SeleniumHelper(WebDriver driver){
-        this.driver  = driver;
-    }
-
-    public void setdriver1(@Optional String browserName, ITestContext testContext){
-        HashMap<String, String> time= new HashMap<String, String>();
-        WebDriverFactory base= new WebDriverFactory();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss", Locale.ENGLISH);
-        Date date = new Date();
-
-        time.put("StartdateTime",dateFormat.format(date));
-        base.launchBrowser(browserName);
-        TestBase.dicTestData=base.getDicTestData();
-        //browser= new Browser(testContext.getCurrentXmlTest().getName());
-        driver=base.getDriver();
-        TestBase.dicResult.put(testContext.getCurrentXmlTest().getName(), time);
+        this.driver = driver;
+        waitHelper = new WaitHelper(driver);
     }
 
 
-    public void Quit(ITestContext testContext){
+    //All Methods working on elements
+
+    /**
+     * @Description This function scroll element to visible porting.
+     * @return True/False
+     * @author Varsha Singh
+     */
+    public boolean ScrollToElement(WebElement element){
         try{
-            driver.quit();
-        }catch (Exception e){
-            log.error("Error while closing driver");
+            ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
+            return true;
         }
+        catch(Exception e){
+            log.error(String.format(e.getMessage()));
+            ErrDescription = e.getMessage();
+            return false;
+        }
+
+    }
+
+    /***
+     * This function perform click operation on 'Element'
+     * @return true / false
+     * @author Varsha Singh
+     */
+    public boolean Click(WebElement element) {
+        boolean flag = true;
+        try{
+            element.click();
+        }
+        catch (Exception e){
+            log.error(String.format(e.getMessage()));
+            flag = false;
+            ErrDescription = e.getMessage();
+        }
+        return flag;
+    }
+
+    /***
+     * This function perform click operation on o'Element using Java script.'
+     * @return true / false
+     * @author Varsha Singh
+     */
+    public void JSClick(WebElement element) {
+        try{
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+        }
+        catch (Exception e){
+            log.error(String.format(e.getMessage()));
+            ErrDescription = e.getMessage();
+        }
+    }
+
+    /***
+     * This function types value into input box .
+     * @param strKeyword -: String to be entered.
+     * @return true / false
+     * @author Varsha Singh
+     */
+    public boolean Type(WebElement element, String strKeyword){
+        boolean flag = false;
+        try {
+                element.clear();
+                element.sendKeys(strKeyword);
+                flag = true;
+            }catch(Exception ex){
+                try {
+                        ((JavascriptExecutor) driver).executeScript("arguments[0].value=''", element);
+                        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+                        ((JavascriptExecutor) driver).executeScript("arguments[0].value='" + strKeyword + "'", element);
+                        return flag = true;
+                }catch(Exception e){
+                        log.error(String.format(e.getMessage()));
+                        flag = false;
+                        ErrDescription = e.getMessage();
+
+                }
+
+            }
+        return flag;
+    }
+
+    /***
+     * This function types value into input box using JS.
+     * @param strKeyword -: String to be entered.
+     * @return true / false
+     * @author Varsha Singh
+     */
+    public boolean JsType(WebElement element,String strKeyword){
+
+        try {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].value=''", element);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].value='" + strKeyword + "'", element);
+            return true;
+        }
+        catch (Exception e){
+            log.error(String.format(e.getMessage()));
+            ErrDescription = e.getMessage();
+            return  false;
+        }
+    }
+
+    /***
+     * This Function is used to check whether element exist or not in a web page.
+     * @author Varsha Singh
+     * @return True/False
+     */
+    public boolean Exist(String xpath){
+        boolean flag = false;
+        try
+        {
+            if (driver.findElements(By.xpath(xpath)).size() > 0)
+            {
+                if (driver.findElement(By.xpath(xpath)).isDisplayed()) {
+                    log.error(String.format("Element with xpath - %s is visible on PAGE ", xpath));
+                    flag = true;
+                }
+                else {
+                    log.error(String.format("Element with xpath - %s is not visible on PAGE ",xpath));
+                    throw new Exception("Element with xpath - " + xpath + " is not visible on PAGE ");
+                }
+            }
+            else
+                ErrDescription = "Element with xpath '" + xpath + "' is not found on PAGE ";
+        }
+        catch (Exception e)
+        {
+            flag = false;
+            ErrDescription = e.getMessage();
+        }
+        return flag;
+    }
+
+    /***
+     * This function perform mouse hover operation on object passed to 'Element.
+     * @author Varsha Singh
+     * @return True/False
+     */
+    public boolean MouseHover(WebElement element){
+        boolean blnFlag = true;
+        try{
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element).build().perform();
+        }
+        catch (Exception e){
+            blnFlag = false;
+            ErrDescription = e.getMessage();
+        }
+        return blnFlag;
+    }
+    /***
+     * This function is used to get selected option in a dropdown.
+     * @return List<WebElement>
+     */
+    public List<WebElement> GetSelectedOptions(WebElement element){
+        return new org.openqa.selenium.support.ui.Select(element).getAllSelectedOptions();
+    }
+
+    /***
+     * This function selects the value based on certain condition for 'Element(string strObjectName)'
+     * @param strListValue -: Value to be selected
+     * @param selectType -: Different Select Type (visibletext,byvalue,byindex,partialtext)
+     * @param element Element of select box
+     * @return True/false
+     */
+    public boolean Select(WebElement element,String strListValue,String selectType){
+        boolean flag = false;
+        try{
+            if (element == null){
+                return false;
+            }
+            try
+            {
+                switch (selectType.toLowerCase()) {
+                    case "visibletext":
+                        new org.openqa.selenium.support.ui.Select(element).selectByVisibleText(strListValue);
+                        return true;
+                    case "byvalue":
+                        new org.openqa.selenium.support.ui.Select(element).selectByValue(strListValue);
+                        return true;
+                    case "byindex":
+                        new org.openqa.selenium.support.ui.Select(element).selectByIndex(Integer.parseInt(strListValue));
+                        return true;
+                    case "partialtext":
+                        org.openqa.selenium.support.ui.Select select = new org.openqa.selenium.support.ui.Select(element);
+                        List<WebElement> lstOptions = select.getOptions();
+                        String strvalue="";
+                        for(WebElement option:lstOptions){
+                            if(option.getText().contains(strListValue)) {
+                                strvalue = option.getAttribute("value");
+                                break;
+                            }
+                        }
+                        if(!strvalue.equals("")){
+                            select.selectByValue(strvalue);
+                            return true;
+                        }else{
+                            ErrDescription = String.format("Option <b>%s</b> is not valid option",strvalue);
+                            log.error(String.format("Option %s is not valid option",strvalue));
+                            return false;
+                        }
+                }
+
+            }
+            catch (Exception e)
+            {
+                element.click();
+                element.findElement(By.xpath("//*[text()='" + strListValue + "']"));
+            }
+
+            flag = true;
+        }
+        catch (Exception e)
+        {
+            flag = false;
+            ErrDescription = e.getMessage();
+            log.error(String.format(e.getMessage()));
+        }
+        return flag;
+    }
+
+    /***
+     * This function verifies the visibility of an object passed to 'Element
+     * @author Varsha Singh
+     * @return True/False
+     */
+    public boolean isVisible(WebElement element){
+        try{
+            return element.isDisplayed();
+        }
+        catch (Exception e){
+            ErrDescription = e.getMessage();
+            log.error(String.format(e.getMessage()));
+        }
+        return false;
+    }
+
+    /***
+     * This function verifies for selected radio or list object passed to 'Element
+     * @author Varsha Singh
+     * @return True/False
+     */
+    public boolean isSelected(WebElement element){
+        try{
+            return element.isSelected();
+        }
+        catch (Exception e){
+            ErrDescription = e.getMessage();
+            log.error(String.format(e.getMessage()));
+        }
+        return false;
+    }
+
+    /***
+     * This function gets the text over an object passed to 'Element(string strObjectName)'
+     * @author Giresh Singh
+     * @Since 18/April/2016
+     * @return String captured text
+     */
+    public String GetText(WebElement element) {
+        try{
+            return element.getText();
+        }
+        catch (Exception e) {
+            ErrDescription = e.getMessage();
+            log.error(String.format(e.getMessage()));
+        }
+        return "ErrorValue";
     }
 
     /**
@@ -219,32 +452,155 @@ public class SeleniumHelper {
         return flag;
     }
 
-    //All Java Script related functions
+    /***
+     * This funstion is used get name of the browser.
+     * @return String -BrowserName
+     * @author Varsha Singh
+     */
+    public String BrowserName(){
+        String strBrowser="";
+        try{
+            strBrowser=driver.toString();
+            if(strBrowser.contains("chrome")){
+                strBrowser="chrome";
+            }else if(strBrowser.contains("internet explorer")){
+                strBrowser="ie";
+            }else if(strBrowser.contains("firefox")){
+                strBrowser="firefox";
+            }
+        }catch(Exception ex){
+            strBrowser="default";
+        }
+        return strBrowser;
+    }
 
     /**
-     * This function scroll element to visible porting.
+     * This function performs Browser back operation.
      * @return True/False
      * @author Varsha Singh
      */
-    public boolean ScrollToElement(WebElement element){
+    public boolean Back(){
         boolean flag = false;
         try{
-
-                try{
-                    ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
-                }
-                catch(Exception e){
-                    log.error(String.format(e.getMessage()));
-                    flag = false;
-                    ErrDescription = e.getMessage();
-                }
-                return flag = true;
+            driver.navigate().back();
+            //Need to implement Wait for Page Load in Wait Helper class
+            flag = true;
         }
-        catch(Exception e){
-            log.error(String.format(e.getMessage()));
-            ErrDescription = e.getMessage();
-            return false;
+        catch (Exception e){
+            log.error("Error while using browser back function.");
+            flag = false;
+            ErrDescription= e.getMessage();
         }
+        return flag;
     }
+
+    /**
+     * This function performs Browser refresh operation.
+     * @return True/False
+     * @author Varsha Singh
+     */
+    public boolean Refresh(){
+        boolean flag = false;
+        try{
+            driver.navigate().refresh();
+            //Need to implement WaitForPageLoad()
+            flag = true;
+        }
+        catch (Exception e)
+        {
+            flag = false;
+            ErrDescription = e.getMessage();
+        }
+        return flag;
+    }
+
+    /**
+     * This function performs Browser maximize operation.
+     * @return True/False
+     * @author Varsha Singh
+     */
+    public boolean Maximize() {
+        boolean flag = false;
+        try{
+            driver.manage().window().maximize();
+            flag = true;
+        }
+        catch (Exception e){
+            flag = false;
+            ErrDescription = e.getMessage();
+        }
+        return flag;
+    }
+
+    /**
+     *  This function gets the page URL
+     * @return True/False
+     * @author Varsha Singh
+     */
+    public String GetURL(){
+        String strURL = "";
+        try{
+            strURL = driver.getCurrentUrl();
+        }
+        catch (Exception e){
+            strURL = "";
+            ErrDescription= e.getMessage();
+        }
+        return strURL;
+    }
+
+    /***
+     * This function compares the actual page title with the passed string
+     * @param strWindowTitle -: Page Title
+     * @return -: true / false
+     * @author Varsha Singh
+     */
+    public boolean VerifyTitle(String strWindowTitle){
+        boolean flag = false;
+        try{
+            String strBrowserTitle = "";
+            strBrowserTitle = driver.getTitle();
+            flag=strBrowserTitle.contains(strWindowTitle);
+        }
+        catch (Exception e){
+            flag = false;
+            ErrDescription = e.getMessage();
+        }
+        return flag;
+    }
+
+    /***
+     *
+     * @param action
+     * @return
+     */
+    public String PerformActionOnAlert(String action){
+        String alertMessage = "" ;
+        try{
+            WebDriverWait wait = new WebDriverWait(driver,5);
+            wait.until(ExpectedConditions.alertIsPresent());
+            Alert alert = driver.switchTo().alert();
+            alertMessage = alert.getText();
+            switch(action.toLowerCase()){
+                case "ok":
+                case  "accept":{
+                    alert.accept();
+                    break;
+                }
+                case  "cancel":
+                case"dismiss":{
+                    alert.dismiss();
+                    break;
+                }
+            }
+
+        }catch(Exception ex){
+            alertMessage ="Exception";
+            log.error(ex.getMessage());
+        }
+
+        return alertMessage;
+    }
+
 
 }
