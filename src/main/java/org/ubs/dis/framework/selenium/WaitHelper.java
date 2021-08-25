@@ -19,6 +19,7 @@ public class WaitHelper {
     //initialize webdriver
     public WaitHelper(WebDriver driver){
         this.driver = driver;
+        log.info(String.format("WaitHelper object created......"));
     }
 
     public void setImplicitWait(long TimeOut, TimeUnit unit){
@@ -117,5 +118,13 @@ public class WaitHelper {
         }
         return flag;
     }
+    /**
+    public void WaitForPageLoad(int...intTimeOut){
+        if(intTimeOut.length==0)
+            intTimeOut[0] = 120;//2 minutes default wait
+        else
+            intTimeOut[0] = Integer.parseInt(TestBase.dicConfig.get("PageWaitTime")) ;
 
+    }
+    */
 }

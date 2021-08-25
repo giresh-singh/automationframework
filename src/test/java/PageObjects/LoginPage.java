@@ -69,6 +69,9 @@ public class LoginPage {
     @FindBy(id = "SubmitCreate")
     WebElement btnCreateAcc;
 
+    @FindBy(xpath = "//*[@id='center_column']/p")
+    WebElement msgSuccessAccCreation;
+
     //Create Page Constructor which initialize driver amd elements of this page
     public LoginPage(WebDriver driver){
         this.driver = driver;
@@ -104,6 +107,50 @@ public class LoginPage {
             return blnFlag;
         }
     }
+    public boolean EnterValidUserIdPwd(String strUserName,String strPassword){
+        boolean blnFlag = false;
+        try{
+            blnFlag = selenium.Type(txtEmailAdd,strUserName);
+            if(blnFlag){
+                blnFlag = selenium.Type(txtPassword,strPassword);
+                if(blnFlag){
+                    return blnFlag = true;
+                }else{
+                    ErrDescription= selenium.ErrDescription+String.format("Not able to enter Password <b>%s</b>",strPassword);
+                    log.error(String.format("Not able to enter Password <b>%s</b>",strPassword));
+                    return blnFlag;
+                }
+            }else{
+                ErrDescription = selenium.ErrDescription+String.format("Not able to type <b>%s</b> in user id field",strUserName);
+                log.error(String.format("Not able to type <b>%s</b> in user id field",strUserName));
+                return blnFlag;
+            }
+        }catch(Exception ex){
+            log.error(String.format("Not able SignIn getting error %s",ex.getMessage()));
+            ErrDescription = String.format("Not able SignIn getting error %s",ex.getMessage());
+            return  blnFlag;
+        }
+    }
+
+    public HomePage ClickOnBtnSignIn(){
+        boolean blnFlag = false;
+        try{
+            blnFlag = selenium.Click(btnSignIn);
+            waitHelper.waitForElement(lblMyAccount,30);
+            if(blnFlag){
+                return new HomePage(driver);
+            }else{
+               ErrDescription = "Not able to initialize HomePage returning null" ;
+               log.error("Not able to initialize HomePage returning null");
+               return null;
+            }
+        }catch(Exception ex){
+            log.error(String.format("Not able SignIn getting error %s",ex.getMessage()));
+            ErrDescription = String.format("Not able SignIn getting error %s",ex.getMessage());
+            return null;
+        }
+    }
+
     public boolean SignInWithValidCred(String strUserName,String strPassword){
         boolean blnFlag = false;
         try{
@@ -112,8 +159,7 @@ public class LoginPage {
                 blnFlag = selenium.Type(txtPassword,strPassword);
                 if(blnFlag){
                     blnFlag = selenium.Click(btnSignIn);
-                    waitHelper.Threadwait(10);
-                    //waitHelper.waitForElement(lblMyAccount,30);
+                    waitHelper.waitForElement(lblMyAccount,30);
                     if(blnFlag){
                         String myAcc = selenium.GetText(lblMyAccount);
                         if(myAcc.equalsIgnoreCase("My account")){
@@ -171,4 +217,11 @@ public class LoginPage {
             return  blnFlag;
         }
     }
+
+    public void LogInToApplication(String userId,String password){
+        clicOnSignIn();
+        EnterValidUserIdPwd(userId,password);
+        ClickOnBtnSignIn();
+    }
+
 }

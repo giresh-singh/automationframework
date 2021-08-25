@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AutomationRegression">
+    <listeners>
+<!--        <listener class-name="org.ubs.dis.framework.utilities.RetryListener"></listener>-->
+        <listener class-name="org.ubs.dis.framework.utilities.ExtentListener"></listener>
+    </listeners>
+    <test name="LogInTest">
+        <classes>
+            <class name="TestScripts.LogInTest"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="RegisterNewUserTest">
+        <classes>
+            <class name="TestScripts.RegisterNewUserTest"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -51,6 +51,7 @@ public class WebDriverFactory {
             try{
                 browser = browser.toLowerCase();
                 if (browser.equalsIgnoreCase("chrome")) {
+                    log.info(String.format("%s : Browser object creation started ....",browser));
                     System.setProperty("webdriver.chrome.driver",TestBase.dicProjectVar.get("Driver")+"chromedriver.exe");
                     Map<String, Object> preferences  = new HashMap<String, Object>();
                     preferences .put("profile.default_content_settings.popups", 0);
@@ -72,12 +73,11 @@ public class WebDriverFactory {
                     capabilities.setCapability(ChromeOptions.CAPABILITY, options);
                     //capabilities.setCapability("chrome.prefs", prefs);
                     driver = new ChromeDriver(capabilities);
+                    log.info(String.format("%s : Browser object Created successfully ....",browser));
                 } else if (browser.equalsIgnoreCase("firefox")) {
-
+                    log.info(String.format("%s : Browser object creation started ....",browser));
                     System.setProperty("webdriver.firefox.marionette", TestBase.dicProjectVar.get("Driver") + "geckodriver.exe");
                     System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
-                    //System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"C:\\temp\\logs.txt");
-                    //DesiredCapabilities capabilities = DesiredCapabilities.firefox();
                     capabilities.setBrowserName("firefox");
                     capabilities.setCapability("marionette", true);
 
@@ -98,16 +98,20 @@ public class WebDriverFactory {
                     profile.setPreference( "pdfjs.disabled", true );
                     capabilities.setCapability(FirefoxDriver.PROFILE, profile);
                     driver = new FirefoxDriver(capabilities);
-                    driver.manage().window().maximize();
+                    log.info(String.format("%s : Browser object Created successfully ....",browser));
+
+                    //driver.manage().window().maximize();
 
                 } else if (browser.equalsIgnoreCase("ie")) {
                     browser = "internet explorer";
+                    log.info(String.format("%s : Browser object creation started ....",browser));
                     System.setProperty("webdriver.ie.driver",TestBase.dicProjectVar.get("Driver")+"IEDriverServer.exe");
                     //capabilities=DesiredCapabilities.internetExplorer();
                     capabilities.setBrowserName("internetExplorer");
                     capabilities.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING, true);
                     capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
                     driver = new InternetExplorerDriver();
+                    log.info(String.format("%s : Browser object Created successfully ....",browser));
                 }
                 if(driver!=null){
                     driver.manage().window().maximize();
@@ -136,6 +140,7 @@ public class WebDriverFactory {
     }
 
     public ChromeOptions getChromeOptions(){
+        log.info(String.format("Setting -> ChromeOptions  Started..."));
         //preferences
         Map<String, Object> preferences  = new HashMap<String, Object>();
         preferences .put("profile.default_content_settings.popups", 0);
@@ -161,6 +166,7 @@ public class WebDriverFactory {
         if(System.getProperty("os.name").contains("Linux")){
             options.addArguments("--headless","window-size=1024,768","--no-sandbox");
         }
+        log.info(String.format("Setting -> ChromeOptions  Completed..."));
         return options;
     }
 
@@ -183,6 +189,7 @@ public class WebDriverFactory {
     }
 
     public InternetExplorerOptions getIEOptions(){
+        log.info(String.format("Setting -> InternetExplorerOptions  Started..."));
         //Desired Capabilities
         DesiredCapabilities ieCapability = new DesiredCapabilities();
         ieCapability.setCapability(InternetExplorerDriver.ELEMENT_SCROLL_BEHAVIOR, ElementScrollBehavior.BOTTOM);
@@ -194,6 +201,7 @@ public class WebDriverFactory {
         ieCapability.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
         //Options
         InternetExplorerOptions ieOptions = new InternetExplorerOptions(ieCapability);
+        log.info(String.format("Setting -> InternetExplorerOptions  Completed..."));
         return ieOptions;
     }
 
@@ -217,6 +225,7 @@ public class WebDriverFactory {
 
     public FirefoxOptions getFirefoxOptions(){
         //Firefox profile
+        log.info(String.format("Setting -> FirefoxOptions  Started..."));
         FirefoxProfile profile = new FirefoxProfile();
         profile.setAcceptUntrustedCertificates(true);
         profile.setAssumeUntrustedCertificateIssuer(true);
@@ -245,6 +254,7 @@ public class WebDriverFactory {
         if(System.getProperty("os.name").contains("Linux")){
             options.addArguments("--headless","window-size=1024,768","--no-sandbox");
         }
+        log.info(String.format("Setting -> FirefoxOptions  Completed..."));
         return options;
     }
     public WebDriver getFirefoxDriver(FirefoxOptions cap){

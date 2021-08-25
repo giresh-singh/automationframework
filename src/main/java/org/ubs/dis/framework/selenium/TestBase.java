@@ -197,6 +197,7 @@ public class TestBase {
             browserName = browserName.toLowerCase();
             switch(browserName){
                 case "chrome":
+                    log.info(String.format("%s : Browser object creation started ....",browserName));
                     WebDriverFactory chrome = WebDriverFactory.class.newInstance();
                     ChromeOptions chromeoptions = chrome.getChromeOptions();
                     driver = chrome.getChromeDriver(chromeoptions);
@@ -204,6 +205,7 @@ public class TestBase {
                     return driver;
                     
                 case "firefox":
+                    log.info(String.format("%s : Browser object creation started ....",browserName));
                     WebDriverFactory firefox = WebDriverFactory.class.newInstance();
                     FirefoxOptions firefoxoptions = firefox.getFirefoxOptions();
                     driver = firefox.getFirefoxDriver(firefoxoptions);
@@ -211,6 +213,7 @@ public class TestBase {
                     return driver;
                 case "ie":
                 case "internetexplorer":
+                    log.info(String.format("%s : Browser object creation started ....",browserName));
                     WebDriverFactory ieDriver = WebDriverFactory.class.newInstance();
                     InternetExplorerOptions ieOptions = ieDriver.getIEOptions();
                     driver =  ieDriver.getIEDriver(ieOptions);
@@ -222,6 +225,8 @@ public class TestBase {
 
         }catch (Exception ex){
             log.info(String.format("Browser Name %s is not a valid should be chrome, firefox,ie,internetexplorer",browserName));
+            log.error(ex.getMessage());
+            ErrDescription = ex.getMessage();
             return null;
         }
     }
@@ -233,6 +238,7 @@ public class TestBase {
         wait.setImplicitWait(Integer.parseInt(dicProjectVar.get("implicitWait")), TimeUnit.SECONDS);
         wait.pageLoadTime(Integer.parseInt(dicProjectVar.get("pageLoadWait")));
         driver.manage().window().maximize();
+        log.info(String.format("Driver %s maximized",browserName));
     }
 
     public void TakeScreenShot(WebDriver driver,String TCName){

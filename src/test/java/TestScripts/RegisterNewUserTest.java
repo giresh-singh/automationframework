@@ -1,5 +1,6 @@
 package TestScripts;
 
+import PageObjects.CommonLib;
 import PageObjects.RegisterNewUserPage;
 import org.apache.log4j.Logger;
 import org.testng.ITestContext;
@@ -36,10 +37,11 @@ public class RegisterNewUserTest extends TestBase {
      //# Test Data:  TestData can be added in dicTestData.put(k,v)
      //#######################################################################################################
      */
+    CommonLib common = new CommonLib();
     String strPreFix = "Mr.";
     String strCreateEmail = "Auto"+random.nextInt(0x186a0)+"@gmail.com";
-    String fName = "Auto";
-    String lName = "Test";
+    String fName = common.generateRandString(5);//"Auto";
+    String lName = common.generateRandString(5);//"Test";
     String strPassword = "Vaanya@03";
     String strDays = "1",strMonth = "7",strYears = "1975";
 
@@ -73,7 +75,7 @@ public class RegisterNewUserTest extends TestBase {
         if (blnStep) {
             reportStep(testContext, "PASS", "<b>SignIn</b> link clicked");
         } else {
-            reportStep(testContext, "FAIL", "<b>SignIn</b> link not clicked and error is as - ");
+            reportStep(testContext, "FAIL", regiUserPage.ErrDescription);
         }
         // Step# 5: Enter Email Add to Register
         blnStep = regiUserPage.enterEmailCreateAcc(strCreateEmail);
@@ -92,8 +94,8 @@ public class RegisterNewUserTest extends TestBase {
         }
 
         // Step# 7: Enter Personal Information
-        fName = regiUserPage.generateRandString(5);
-        lName = regiUserPage.generateRandString(5);
+        //fName = common.generateRandString(5);
+        //lName = regiUserPage.generateRandString(5);
         personalInfo = String.format("First Name: <b>%s</b><br>Last Name: <b>%s</b></br><br>Password: <b>%s</b></br> entered successfully",fName,lName,strPassword);
         blnStep = regiUserPage.fillPersonalInfo(fName,lName,strPassword);
         if (blnStep) {
