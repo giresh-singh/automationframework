@@ -53,7 +53,6 @@ public class TestBase {
         log.info(String.format("......................................................"));
         log.info(String.format("................Before Suite ........................."));
         log.info(String.format(".............Test Suite -> %s Started ..................",testContext.getSuite().getName()));
-        //log.info(String.format(".............Test Case -> %s Started ..................",testContext.getName()));
         ReadProperty prop = new ReadProperty();
         log.info("Read Framework Properties......");
         dicProjectVar = prop.profile("src/main/resources/config/framework-config.properties");
@@ -194,35 +193,52 @@ public class TestBase {
 
     public WebDriver getBrowserObject(String browserName){
         try{
+            log.info(String.format("Getting Browser Object: %s process started ...",browserName));
             browserName = browserName.toLowerCase();
             switch(browserName){
                 case "chrome":
                     log.info(String.format("%s : Browser object creation started ....",browserName));
                     WebDriverFactory chrome = WebDriverFactory.class.newInstance();
                     ChromeOptions chromeoptions = chrome.getChromeOptions();
-                    driver = chrome.getChromeDriver(chromeoptions);
-                    log.info(String.format("Driver with detail launched successfully:  %s",driver.toString()));
-                    return driver;
-                    
+                    try{
+                        driver = chrome.getChromeDriver(chromeoptions);
+                        log.info(String.format("Driver with detail launched successfully:  %s",driver.toString()));
+                        return driver;
+                    }catch(Exception ex){
+                        log.error(String.format("Driver options not set and getting error %s",ex.getMessage()));
+                        ErrDescription = String.format("Driver options not set and getting error %s",ex.getMessage());
+                        return null;
+                    }
                 case "firefox":
                     log.info(String.format("%s : Browser object creation started ....",browserName));
                     WebDriverFactory firefox = WebDriverFactory.class.newInstance();
                     FirefoxOptions firefoxoptions = firefox.getFirefoxOptions();
-                    driver = firefox.getFirefoxDriver(firefoxoptions);
-                    log.info(String.format("Driver with detail launched successfully:  %s",driver.toString()));
-                    return driver;
+                    try{
+                        driver = firefox.getFirefoxDriver(firefoxoptions);
+                        log.info(String.format("Driver with detail launched successfully:  %s",driver.toString()));
+                        return driver;
+                    }catch (Exception ex){
+                        log.error(String.format("Driver options not set and getting error %s",ex.getMessage()));
+                        ErrDescription = String.format("Driver options not set and getting error %s",ex.getMessage());
+                        return null;
+                    }
                 case "ie":
                 case "internetexplorer":
                     log.info(String.format("%s : Browser object creation started ....",browserName));
                     WebDriverFactory ieDriver = WebDriverFactory.class.newInstance();
                     InternetExplorerOptions ieOptions = ieDriver.getIEOptions();
-                    driver =  ieDriver.getIEDriver(ieOptions);
-                    log.info(String.format("Driver with detail launched successfully:  %s",driver.toString()));
-                    return driver;
+                    try{
+                        driver =  ieDriver.getIEDriver(ieOptions);
+                        log.info(String.format("Driver with detail launched successfully:  %s",driver.toString()));
+                        return driver;
+                    }catch (Exception ex){
+                        log.error(String.format("Driver options not set and getting error %s",ex.getMessage()));
+                        ErrDescription = String.format("Driver options not set and getting error %s",ex.getMessage());
+                        return null;
+                    }
                 default:
                     throw new IllegalStateException("Unexpected value: " + browserName);
             }
-
         }catch (Exception ex){
             log.info(String.format("Browser Name %s is not a valid should be chrome, firefox,ie,internetexplorer",browserName));
             log.error(ex.getMessage());
@@ -232,13 +248,17 @@ public class TestBase {
     }
 
     public void setupBrowser(String browserName){
-        driver = getBrowserObject(browserName);
-        log.info(String.format("Initialize Driver %s",driver.hashCode()));
-        WaitHelper wait = new WaitHelper(driver);
-        wait.setImplicitWait(Integer.parseInt(dicProjectVar.get("implicitWait")), TimeUnit.SECONDS);
-        wait.pageLoadTime(Integer.parseInt(dicProjectVar.get("pageLoadWait")));
-        driver.manage().window().maximize();
-        log.info(String.format("Driver %s maximized",browserName));
+        try{
+            driver = getBrowserObject(browserName);
+            log.info(String.format("Initialize Driver %s",driver.hashCode()));
+            WaitHelper wait = new WaitHelper(driver);
+            wait.setImplicitWait(Integer.parseInt(dicProjectVar.get("implicitWait")), TimeUnit.SECONDS);
+            wait.pageLoadTime(Integer.parseInt(dicProjectVar.get("pageLoadWait")));
+            driver.manage().window().maximize();
+            log.info(String.format("Driver %s maximized",browserName));
+        }catch(Exception ex){
+            ErrDescription = ex.getMessage()+ErrDescription;
+        }
     }
 
     public void TakeScreenShot(WebDriver driver,String TCName){

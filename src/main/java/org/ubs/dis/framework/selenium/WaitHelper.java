@@ -33,7 +33,7 @@ public class WaitHelper {
      * @return WebDriverWait object
      */
     private WebDriverWait getWait(int timeOutInSeconds){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOutInSeconds));
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(timeOutInSeconds));
         wait.pollingEvery(Duration.ofMillis(500));
         wait.ignoring(NoSuchElementException.class);
         wait.ignoring(StaleElementReferenceException.class);

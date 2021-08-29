@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.ubs.dis.framework.selenium.SeleniumHelper;
 import org.ubs.dis.framework.selenium.WaitHelper;
 import org.ubs.dis.framework.utilities.LoggerHelper;
 
@@ -32,12 +33,15 @@ public class RegisterNewUserPage {
     private WebDriver driver;
     private Logger log = LoggerHelper.getLogger(RegisterNewUserPage.class);
     WaitHelper waitHelper;
+    SeleniumHelper selenium;
     public String ErrDescription="";
     /**
      //###################################################################
      //# All Elements (Object Repository)
      //# #################################################################
      */
+
+
     @FindBy(xpath = "//a[@class='login']")
     WebElement lnkSignin;
 
@@ -47,14 +51,12 @@ public class RegisterNewUserPage {
     @FindBy(xpath = "//h1[contains(text(),'Authentication')]")
     WebElement lblAuthentication;
 
+    //Create Account text
     @FindBy(xpath = "//h1[contains(text(),'Create an account')]")
     WebElement lblCreateAnAccount;
 
-    @FindBy(id = "email_create")
-    WebElement txtEmailCreate;
-
-    @FindBy(id = "SubmitCreate")
-    WebElement btnCreateAccount;
+    @FindBy(xpath = "//*[@id='center_column']/p")
+    WebElement msgSuccessAccCreation;
 
     @FindBy(id = "id_gender1")
     WebElement radioPrefixMr;
@@ -126,66 +128,42 @@ public class RegisterNewUserPage {
         this.driver = driver;
         PageFactory.initElements(driver,this);
         waitHelper = new WaitHelper(driver);
-        waitHelper.waitForElement(lnkSignin,30);
+        waitHelper.waitForElement(lblCreateAnAccount,30);
+        selenium = new SeleniumHelper(driver);
         log.info(String.format("RegisterNewUserPage initiated with all its elements"));
     }
 
-    public boolean clicOnSignIn() {
-        boolean blnFlag = false;
-        try {
-            //Click on signin link on righ top of page
-            lnkSignin.click();
-            //wait for Authentication label to appear
-            waitHelper.waitForElement(lblAuthentication, 30);
-            log.info(String.format("Clicked on Sigin link ... and Authentication text is available"));
-            return blnFlag=true;
-        } catch (Exception ex) {
-            log.error(String.format("Not able to click on SignIn getting error %s", ex.getMessage()));
-            ErrDescription = String.format("Not able to click on SignIn getting error %s", ex.getMessage());
-            return blnFlag;
-        }
-    }
-
-    public boolean enterEmailCreateAcc(String createEmailId){
-        try{
-            //Enter Valid Email id
-            txtEmailCreate.sendKeys(createEmailId);
-            String val = txtEmailCreate.getText();
-            if(txtEmailCreate.isDisplayed()){
-                btnCreateAccount.click();
-                WebElement element = waitHelper.waitForElement(lblCreateAnAccount,30);
-                if(element.isDisplayed()){
-                    return true;
-                }else{
-                    ErrDescription = String.format("Not able to navigate to <b>%s</b>","CREATE AN ACCOUNT");
-                    return false;
-                }
-            }else{
-                ErrDescription = String.format("Not able to enter email <b>%s</b>",createEmailId);
-                return false;
-            }
-        }catch(Exception ex){
-            ErrDescription = String.format(ex.getMessage());
-            log.error(ex.getMessage());
-            return false;
-        }
-    }
-
+    /**
+     * @Description: its selects name prefix Ms or Mrs from Registration Page
+     * @param val
+     * @return boolean
+     */
     public boolean selectPrefix(String val){
         String prefix = val.toLowerCase();
         switch(prefix){
             case "mr.":
                 radioPrefixMr.click();
+                log.info(String.format("Name Prefix: %s is selected",prefix));
                 return true;
             case "mrs.":
                 radioPrefixMrs.click();
+                log.info(String.format("Name Prefix: %s is selected",prefix));
                 return true;
             default:
                 ErrDescription = String.format("Option <b>%s</b> is not correct option",val);
+                log.info(String.format("Option %s is not correct option",val));
         }
         return false;
     }
 
+    /**
+     * @Description: it fills personal information like
+     *               First Name, Last Name, create Password
+     * @param fName
+     * @param lName
+     * @param password
+     * @return boolean
+     */
     public boolean fillPersonalInfo(String fName,String lName, String password){
         boolean blnFlag = false;
         try{
@@ -295,22 +273,6 @@ public class RegisterNewUserPage {
         }catch(Exception ex){
             ErrDescription = ex.getMessage();
             return false;
-        }
-    }
-
-    public boolean logOutApp(){
-        boolean blnFlag = false;
-        try{
-            //Click on Sign Out link
-            lnklogOut.click();
-            //Verify logged out
-            waitHelper.waitForElement(lblAuthentication, 30);
-            log.info(String.format("Logout is successful....."));
-            return blnFlag = true;
-        }catch(Exception ex){
-            log.error(String.format("Not able Logout from application getting error %s",ex.getMessage()));
-            ErrDescription = ex.getMessage();
-            return  blnFlag;
         }
     }
 

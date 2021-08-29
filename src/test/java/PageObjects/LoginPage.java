@@ -66,11 +66,16 @@ public class LoginPage {
     @FindBy(id = "email_create")
     WebElement txtEmailCreateAcc;
 
-    @FindBy(id = "SubmitCreate")
-    WebElement btnCreateAcc;
+    //Create Account text
+    @FindBy(xpath = "//h1[contains(text(),'Create an account')]")
+    WebElement lblCreateAnAccount;
 
-    @FindBy(xpath = "//*[@id='center_column']/p")
-    WebElement msgSuccessAccCreation;
+    @FindBy(id = "email_create")
+    WebElement txtEmailCreate;
+
+    @FindBy(id = "SubmitCreate")
+    WebElement btnCreateAccount;
+
 
     //Create Page Constructor which initialize driver amd elements of this page
     public LoginPage(WebDriver driver){
@@ -80,75 +85,6 @@ public class LoginPage {
         waitHelper.waitForElement(lnkSignin,30);
         selenium = new SeleniumHelper(driver);
         log.info(String.format("LoginPage initiated with all its elements"));
-    }
-    public boolean clicOnSignIn() {
-        boolean blnFlag = false;
-        try {
-            //Click on signin link on righ top of page and wait
-            blnFlag = selenium.Click(lnkSignin);
-            if(blnFlag){
-                waitHelper.waitForElement(lblAuthentication, 30);
-                String Authentication = selenium.GetText(lblAuthentication);
-                log.info(Authentication);
-                if(Authentication.equalsIgnoreCase("Authentication")) {
-                    return true;
-                }
-                else{
-                    ErrDescription=String.format("Observed Text <b>%s</b> does not match with expected text %s",Authentication,"Authentication");
-                    return false;
-                }
-            }else{
-                ErrDescription=selenium.ErrDescription;//String.format("Not able to click on SignIn link");
-                return false;
-            }
-        } catch (Exception ex) {
-            log.error(String.format("Not able to click on SignIn getting error %s", ex.getMessage()));
-            ErrDescription = String.format("Not able to click on SignIn getting error %s", ex.getMessage());
-            return blnFlag;
-        }
-    }
-    public boolean EnterValidUserIdPwd(String strUserName,String strPassword){
-        boolean blnFlag = false;
-        try{
-            blnFlag = selenium.Type(txtEmailAdd,strUserName);
-            if(blnFlag){
-                blnFlag = selenium.Type(txtPassword,strPassword);
-                if(blnFlag){
-                    return blnFlag = true;
-                }else{
-                    ErrDescription= selenium.ErrDescription+String.format("Not able to enter Password <b>%s</b>",strPassword);
-                    log.error(String.format("Not able to enter Password <b>%s</b>",strPassword));
-                    return blnFlag;
-                }
-            }else{
-                ErrDescription = selenium.ErrDescription+String.format("Not able to type <b>%s</b> in user id field",strUserName);
-                log.error(String.format("Not able to type <b>%s</b> in user id field",strUserName));
-                return blnFlag;
-            }
-        }catch(Exception ex){
-            log.error(String.format("Not able SignIn getting error %s",ex.getMessage()));
-            ErrDescription = String.format("Not able SignIn getting error %s",ex.getMessage());
-            return  blnFlag;
-        }
-    }
-
-    public HomePage ClickOnBtnSignIn(){
-        boolean blnFlag = false;
-        try{
-            blnFlag = selenium.Click(btnSignIn);
-            waitHelper.waitForElement(lblMyAccount,30);
-            if(blnFlag){
-                return new HomePage(driver);
-            }else{
-               ErrDescription = "Not able to initialize HomePage returning null" ;
-               log.error("Not able to initialize HomePage returning null");
-               return null;
-            }
-        }catch(Exception ex){
-            log.error(String.format("Not able SignIn getting error %s",ex.getMessage()));
-            ErrDescription = String.format("Not able SignIn getting error %s",ex.getMessage());
-            return null;
-        }
     }
 
     public boolean SignInWithValidCred(String strUserName,String strPassword){
@@ -163,6 +99,7 @@ public class LoginPage {
                     if(blnFlag){
                         String myAcc = selenium.GetText(lblMyAccount);
                         if(myAcc.equalsIgnoreCase("My account")){
+                            log.info(String.format("User ID: %s, Pwd: %s, entered and clicked on SignIn button",strUserName,strPassword));
                             return blnFlag=true;
                         }else{
                             ErrDescription=String.format("Observed Text <b>%s</b> does not match with expected text %s",myAcc,"My account");
@@ -199,18 +136,19 @@ public class LoginPage {
             waitHelper.waitForElement(lblAuthentication, 30);
             if(blnFlag){
                 String Authentication = selenium.GetText(lblAuthentication);
-                if(Authentication.contains("Authentication")) {
-                    return blnFlag = true;
+                log.info(String.format("Text found : %s",Authentication));
+                if(Authentication.equalsIgnoreCase("Authentication")) {
+                    log.info(String.format("User Logged out successfully"));
                 }
                 else{
                     ErrDescription=String.format("Observed Text <b>%s</b> does not match with expected text %s",Authentication,"Authentication");
-                    return blnFlag;
+                    log.error(String.format("Observed Text: %s does not match with expected text: %s",Authentication,"AUTHENTICATION"));
                 }
             }else{
                 ErrDescription = selenium.ErrDescription+String.format("Not able to click on <b>%s</b> button","Logout");
                 log.error(String.format("Not able to click on %s button","Logout"));
-                return blnFlag;
             }
+            return blnFlag;
         }catch(Exception ex){
             log.error(String.format("Not able Logout from application getting error %s",ex.getMessage()));
             ErrDescription = String.format("Not able Logout from application getting error %s",ex.getMessage());
@@ -218,10 +156,47 @@ public class LoginPage {
         }
     }
 
-    public void LogInToApplication(String userId,String password){
-        clicOnSignIn();
-        EnterValidUserIdPwd(userId,password);
-        ClickOnBtnSignIn();
+    public boolean enterEmailCreateAcc(String createEmailId){
+        try{
+            selenium.ScrollToElement(txtEmailCreate);
+            //Enter Valid Email id
+            txtEmailCreate.sendKeys(createEmailId);
+            String val = txtEmailCreate.getText();
+            if(txtEmailCreate.isDisplayed()){
+                btnCreateAccount.click();
+                WebElement element = waitHelper.waitForElement(lblCreateAnAccount,30);
+                if(element.isDisplayed()){
+                    return true;
+                }else{
+                    ErrDescription = String.format("Not able to navigate to <b>%s</b>","CREATE AN ACCOUNT");
+                    return false;
+                }
+            }else{
+                ErrDescription = String.format("Not able to enter email <b>%s</b>",createEmailId);
+                return false;
+            }
+        }catch(Exception ex){
+            ErrDescription = String.format(ex.getMessage());
+            log.error(ex.getMessage());
+            return false;
+        }
     }
 
+    public boolean ClickOnCreateAccBtn(){
+        boolean blnFlag = false;
+        try{
+            blnFlag = selenium.Click(btnCreateAccount);
+            if(blnFlag){
+                log.info(String.format("Clicked on Create An Account button"));
+            }else{
+                log.error(String.format("Not able to click on Create An Account button getting error as: %s ",selenium.ErrDescription));
+                ErrDescription = String.format("Not able to click on Create An Account button getting error as: %s ",selenium.ErrDescription);
+            }
+            return blnFlag;
+        }catch(Exception ex){
+            ErrDescription = String.format(ex.getMessage());
+            log.error(ex.getMessage());
+            return blnFlag;
+        }
+    }
 }

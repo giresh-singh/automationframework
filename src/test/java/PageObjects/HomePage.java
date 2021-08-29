@@ -37,6 +37,21 @@ public class HomePage {
      //# All Elements (Object Repository)
      //# #################################################################
      */
+    //Sigin link Top Right
+    @FindBy(xpath = "//a[@class='login']")
+    WebElement lnkSignin;
+    //Authentication text
+    @FindBy(xpath = "//h1[contains(text(),'Authentication')]")
+    WebElement lblAuthentication;
+    //Contact Us link on Right Top
+    @FindBy(id="contact-link")
+    WebElement lnkContactUs;
+    //Search text field
+    @FindBy(id="search_query_top")
+    WebElement txtSearch;
+    //Search Button
+    @FindBy(xpath = "//form[@id='searchbox']/button")
+    WebElement btnSearch;
 
     @FindBy(xpath = "//*[@id='block_top_menu']/ul/li[1]/a")
     WebElement navMenuWomen;
@@ -44,6 +59,12 @@ public class HomePage {
     WebElement navMenuDress;
     @FindBy(xpath = "//*[@id='block_top_menu']/ul/li[1]/a")
     WebElement navMenuTshirts;
+
+    //Tab labels POPULAR and BEST SELLERS
+    @FindBy(xpath = "//a[contains(text(),'Popular')]")
+    WebElement tabLblPopular;
+    @FindBy(xpath = "//a[contains(text(),'Best Sellers')]")
+    WebElement tabLblBestSellers;
 
 
     //Create Page Constructor which initialize driver amd elements of this page
@@ -54,5 +75,44 @@ public class HomePage {
         waitHelper.waitForElement(navMenuWomen,30);
         selenium = new SeleniumHelper(driver);
         log.info(String.format("HomePage initiated with all its elements"));
+    }
+
+    public boolean verifyHomePage(){
+        boolean blnFlag = false;
+        try{
+            blnFlag = selenium.Exist("//a[@class='login']");
+            return blnFlag;
+        }catch (Exception ex){
+            log.error(String.format("Getting Exception as %s",ex.getMessage()));
+            ErrDescription = String.format("Getting Exception as %s",ex.getMessage());
+            return blnFlag = false;
+        }
+    }
+
+    public boolean clicOnSignIn() {
+        boolean blnFlag = false;
+        try {
+            //Click on signin link on righ top of page and wait
+            blnFlag = selenium.Click(lnkSignin);
+            if(blnFlag){
+                waitHelper.waitForElement(lblAuthentication, 30);
+                String Authentication = selenium.GetText(lblAuthentication);
+                log.info(Authentication);
+                if(Authentication.equalsIgnoreCase("Authentication")) {
+                    return true;
+                }
+                else{
+                    ErrDescription=String.format("Observed Text <b>%s</b> does not match with expected text %s",Authentication,"Authentication");
+                    return false;
+                }
+            }else{
+                ErrDescription=selenium.ErrDescription;//String.format("Not able to click on SignIn link");
+                return false;
+            }
+        } catch (Exception ex) {
+            log.error(String.format("Not able to click on SignIn getting error %s", ex.getMessage()));
+            ErrDescription = String.format("Not able to click on SignIn getting error %s", ex.getMessage());
+            return blnFlag;
+        }
     }
 }

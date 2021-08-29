@@ -1,5 +1,6 @@
 package TestScripts;
 
+import PageObjects.HomePage;
 import PageObjects.LoginPage;
 import org.apache.log4j.Logger;
 import org.testng.ITestContext;
@@ -46,18 +47,28 @@ public class LogInTest extends TestBase {
             reportStep(testContext,"FAIL",ErrDescription);
             return;
         }
-
-        // Step# : Create Login Page Objects
-        LoginPage loginPage = new LoginPage(driver);
-
+        //Step# : Create Home Page Objects
+        HomePage homePage = new HomePage(driver);
+        reportStep(testContext,"INFO","Home Page object is created");
+        //Step# : Verify Home Page is launched successfully
+        blnStep = homePage.verifyHomePage();
+        if(blnStep){
+            reportStep(testContext,"PASS","Home page loaded successfully");
+        }else{
+            reportStep(testContext,"FAIL",homePage.ErrDescription);
+            return;
+        }
         // Step# 4: Click on Sign In link on right Top
-        blnStep = loginPage.clicOnSignIn();
+        blnStep = homePage.clicOnSignIn();
         if(blnStep){
             reportStep(testContext,"PASS","<b>SignIn</b> link clicked");
         }else{
-            reportStep(testContext,"FAIL",loginPage.ErrDescription);
+            reportStep(testContext,"FAIL",homePage.ErrDescription);
             return;
         }
+        // Step# : Create Login Page Objects
+        LoginPage loginPage = new LoginPage(driver);
+        reportStep(testContext,"INFO","Login Page object is created...");
 
         // Step# 5: Enter User Id, Password and click on Sign In button
         blnStep = loginPage.SignInWithValidCred(dicConfig.get("userid"),dicConfig.get("password"));

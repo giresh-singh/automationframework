@@ -49,6 +49,7 @@ public class SeleniumHelper {
         boolean flag = true;
         try{
             element.click();
+            log.info(String.format("Element: %s is clicked",element.toString()));
         }
         catch (Exception e){
             log.error(String.format(e.getMessage()));
@@ -63,13 +64,15 @@ public class SeleniumHelper {
      * @return true / false
      * @author Varsha Singh
      */
-    public void JSClick(WebElement element) {
+    public boolean JSClick(WebElement element) {
         try{
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+            return true;
         }
         catch (Exception e){
             log.error(String.format(e.getMessage()));
             ErrDescription = e.getMessage();
+            return false;
         }
     }
 
