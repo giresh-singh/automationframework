@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.ubs.dis.framework.selenium.SeleniumHelper;
+import org.ubs.dis.framework.selenium.TestBase;
 import org.ubs.dis.framework.selenium.WaitHelper;
 import org.ubs.dis.framework.utilities.LoggerHelper;
 
@@ -31,7 +32,7 @@ public class HomePage {
     WaitHelper waitHelper;
     SeleniumHelper selenium;
     public String ErrDescription="";
-
+    int intElementWait = Integer.parseInt(TestBase.dicProjectVar.get("elementWait"));
     /**
      //###################################################################
      //# All Elements (Object Repository)
@@ -72,7 +73,7 @@ public class HomePage {
         this.driver = driver;
         PageFactory.initElements(driver,this);
         waitHelper = new WaitHelper(driver);
-        waitHelper.waitForElement(navMenuWomen,30);
+        waitHelper.waitForElement(navMenuWomen,intElementWait);
         selenium = new SeleniumHelper(driver);
         log.info(String.format("HomePage initiated with all its elements"));
     }
@@ -95,7 +96,7 @@ public class HomePage {
             //Click on signin link on righ top of page and wait
             blnFlag = selenium.Click(lnkSignin);
             if(blnFlag){
-                waitHelper.waitForElement(lblAuthentication, 30);
+                waitHelper.waitForElement(lblAuthentication, intElementWait);
                 String Authentication = selenium.GetText(lblAuthentication);
                 log.info(Authentication);
                 if(Authentication.equalsIgnoreCase("Authentication")) {

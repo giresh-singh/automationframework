@@ -78,9 +78,6 @@ public class TestBase {
         setupBrowser(dicConfig.get("BrowserType"));
         log.info(String.format("BrowserType: %s launched successfully",dicConfig.get("BrowserType")));
         extent = ExtentManager.getExtentInstance(dicProjectVar.get("ReportPath")+"AutomationReport.html");
-
-        //ReadExcel read = new ReadExcel(); ----- TBD
-        //dicTestData = read.exlReadMatserTestData(testContext.getCurrentXmlTest().getName()); --- TBD
     }
     /**
      * @Description: Initialise Test case level needs
@@ -108,7 +105,6 @@ public class TestBase {
         test = extent.createTest(method.getName());
         log.info(String.format("Execution of Test Case: %s -> Test Method: %s Started......",testContext.getCurrentXmlTest().getName(),method.getName()));
         log.info(String.format("......................................................"));
-        //reportStep(testContext,"INFO","Test Case: <b>"+testContext.getName()+"</b> Started");
     }
     /**
      * @Description: Prepare report, clear test data etc

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.ubs.dis.framework.selenium.SeleniumHelper;
+import org.ubs.dis.framework.selenium.TestBase;
 import org.ubs.dis.framework.selenium.WaitHelper;
 import org.ubs.dis.framework.utilities.LoggerHelper;
 
@@ -31,6 +32,7 @@ public class MyAccountPage {
     WaitHelper waitHelper;
     SeleniumHelper selenium;
     public String ErrDescription="";
+    int intElementWait = Integer.parseInt(TestBase.dicProjectVar.get("elementWait"));
 
     /**
      //###################################################################
@@ -49,7 +51,7 @@ public class MyAccountPage {
         this.driver = driver;
         PageFactory.initElements(driver,this);
         waitHelper = new WaitHelper(driver);
-        waitHelper.waitForElement(lnkOrderHistoryDetails,30);
+        waitHelper.waitForElement(lnkOrderHistoryDetails,intElementWait);
         selenium = new SeleniumHelper(driver);
         log.info(String.format("My Account Page initiated with all its elements"));
     }

@@ -23,11 +23,9 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class WebDriverFactory {
-    //public static HashMap<String, String> dicProjectVar;
-    //public static HashMap<String, String> dicTestData;
     private Logger log = Logger.getLogger(WebDriverFactory.class);
     private WebDriver driver;
-
+    int implicitWait = Integer.parseInt(TestBase.dicProjectVar.get("implicitWait"));
     public WebDriver getDriver() {
         return driver;
     }
@@ -115,7 +113,7 @@ public class WebDriverFactory {
                 }
                 if(driver!=null){
                     driver.manage().window().maximize();
-                    driver.manage().timeouts().implicitlyWait(Integer.parseInt(TestBase.dicProjectVar.get("implicitWait")), TimeUnit.SECONDS);
+                    driver.manage().timeouts().implicitlyWait(implicitWait, TimeUnit.SECONDS);
                 }
             }catch(Exception ex){
                 log.error(String.format("Error while launching webdriver.\n %s",ex.getMessage()));

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.ubs.dis.framework.selenium.SeleniumHelper;
+import org.ubs.dis.framework.selenium.TestBase;
 import org.ubs.dis.framework.selenium.WaitHelper;
 import org.ubs.dis.framework.utilities.LoggerHelper;
 
@@ -31,6 +32,7 @@ public class LoginPage {
     WaitHelper waitHelper;
     SeleniumHelper selenium;
     public String ErrDescription="";
+    int intElementWait = Integer.parseInt(TestBase.dicProjectVar.get("elementWait"));
     /**
     //###################################################################
     //# All Elements (Object Repository)
@@ -82,7 +84,7 @@ public class LoginPage {
         this.driver = driver;
         PageFactory.initElements(driver,this);
         waitHelper = new WaitHelper(driver);
-        waitHelper.waitForElement(lnkSignin,30);
+        waitHelper.waitForElement(lnkSignin, intElementWait);
         selenium = new SeleniumHelper(driver);
         log.info(String.format("LoginPage initiated with all its elements"));
     }
@@ -95,7 +97,7 @@ public class LoginPage {
                 blnFlag = selenium.Type(txtPassword,strPassword);
                 if(blnFlag){
                     blnFlag = selenium.Click(btnSignIn);
-                    waitHelper.waitForElement(lblMyAccount,30);
+                    waitHelper.waitForElement(lblMyAccount,intElementWait);
                     if(blnFlag){
                         String myAcc = selenium.GetText(lblMyAccount);
                         if(myAcc.equalsIgnoreCase("My account")){
@@ -133,7 +135,7 @@ public class LoginPage {
         try{
             //Click on Sign Out link
             blnFlag = selenium.Click(lnklogOut);
-            waitHelper.waitForElement(lblAuthentication, 30);
+            waitHelper.waitForElement(lblAuthentication, intElementWait);
             if(blnFlag){
                 String Authentication = selenium.GetText(lblAuthentication);
                 log.info(String.format("Text found : %s",Authentication));
@@ -164,7 +166,7 @@ public class LoginPage {
             String val = txtEmailCreate.getText();
             if(txtEmailCreate.isDisplayed()){
                 btnCreateAccount.click();
-                WebElement element = waitHelper.waitForElement(lblCreateAnAccount,30);
+                WebElement element = waitHelper.waitForElement(lblCreateAnAccount,intElementWait);
                 if(element.isDisplayed()){
                     return true;
                 }else{

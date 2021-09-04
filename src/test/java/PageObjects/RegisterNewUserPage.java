@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.ubs.dis.framework.selenium.SeleniumHelper;
+import org.ubs.dis.framework.selenium.TestBase;
 import org.ubs.dis.framework.selenium.WaitHelper;
 import org.ubs.dis.framework.utilities.LoggerHelper;
 
@@ -35,6 +36,7 @@ public class RegisterNewUserPage {
     WaitHelper waitHelper;
     SeleniumHelper selenium;
     public String ErrDescription="";
+    int intElementWait = Integer.parseInt(TestBase.dicProjectVar.get("elementWait"));
     /**
      //###################################################################
      //# All Elements (Object Repository)
@@ -128,7 +130,7 @@ public class RegisterNewUserPage {
         this.driver = driver;
         PageFactory.initElements(driver,this);
         waitHelper = new WaitHelper(driver);
-        waitHelper.waitForElement(lblCreateAnAccount,30);
+        waitHelper.waitForElement(lblCreateAnAccount,intElementWait);
         selenium = new SeleniumHelper(driver);
         log.info(String.format("RegisterNewUserPage initiated with all its elements"));
     }
